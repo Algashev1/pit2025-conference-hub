@@ -8,8 +8,8 @@ const Index = () => {
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto text-center animate-fade-up">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-6">
-            Advanced Information Technologies
-            <span className="text-accent"> 2025</span>
+            Международная научно-техническая конференция "Перспективные информационные технологии"
+            <span className="text-accent"> (ПИТ-2025)</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Join us for the premier conference on advanced information technologies,
