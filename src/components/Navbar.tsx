@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-semibold text-primary">
-              PIT-2025
+              ПИТ-2025
             </Link>
           </div>
 
