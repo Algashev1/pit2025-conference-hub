@@ -1,24 +1,20 @@
 const Dates = () => {
   const dates = [
     {
-      event: "Paper Submission Deadline",
-      date: "June 1, 2025",
+      event: "Начало приёма материалов доклада",
+      date: "1 января, 2025",
     },
     {
-      event: "Notification of Acceptance",
-      date: "July 15, 2025",
+      event: "Окончание приёма материалов доклада",
+      date: "1 февраля, 2025",
     },
     {
-      event: "Camera-ready Submission",
-      date: "August 15, 2025",
+      event: "Объявление списка рекомендованных к публикации тезисов статей",
+      date: "20 февраля, 2025",
     },
     {
-      event: "Early Registration Deadline",
-      date: "August 30, 2025",
-    },
-    {
-      event: "Conference Dates",
-      date: "September 15-17, 2025",
+      event: "Проведение конференции",
+      date: "10-12 марта, 2025",
     },
   ];
 
@@ -26,7 +22,7 @@ const Dates = () => {
     <div className="min-h-screen bg-secondary pt-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-primary mb-12 text-center">
-          Important Dates
+          Важные даты
         </h1>
 
         <div className="max-w-3xl mx-auto">

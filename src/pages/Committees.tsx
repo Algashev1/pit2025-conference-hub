@@ -4,33 +4,33 @@ const Committees = () => {
   const committees = {
     organizing: [
       {
-        name: "Dr. Sarah Chen",
-        role: "Conference Chair",
-        affiliation: "Stanford University",
+        name: "Иванов Иван Иванович",
+        role: "Председатель Программного комитета",
+        affiliation: "Самарский университет им. Королева, г. Самара, Россия",
       },
       {
-        name: "Prof. Michael Roberts",
-        role: "Program Chair",
-        affiliation: "MIT",
+        name: "Петров Пётр Петрович",
+        role: "Заместитель председателя программного комитета",
+        affiliation: "Институт систем обработки изображений РАН – филиал ФНИЦ «Кристаллография и фотоника» РАН, г. Самара, Россия.",
       },
       {
-        name: "Dr. Elena Rodriguez",
-        role: "Technical Chair",
-        affiliation: "ETH Zurich",
+        name: "Комаров Илья Романович",
+        role: "Заместитель председателя программного комитета",
+        affiliation: "Самарский университет им. Королева, г. Самара, Россия",
       },
     ],
     program: [
       {
-        name: "Prof. James Wilson",
-        affiliation: "University of Cambridge",
+        name: "Иванов Иван Иванович",
+        affiliation: "Самарский университет им. Королева, г. Самара, Россия",
       },
       {
-        name: "Dr. Yuki Tanaka",
-        affiliation: "University of Tokyo",
+        name: "Петров Пётр Петрович",
+        affiliation: "Самарский университет им. Королева, г. Самара, Россия",
       },
       {
-        name: "Prof. Maria Garcia",
-        affiliation: "Technical University of Munich",
+        name: "Комаров Илья Романович",
+        affiliation: "Самарский университет им. Королева, г. Самара, Россия",
       },
     ],
   };
@@ -39,12 +39,12 @@ const Committees = () => {
     <div className="min-h-screen bg-secondary pt-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-primary mb-12 text-center">
-          Conference Committees
+          Комитеты
         </h1>
 
         {/* Organizing Committee */}
         <section className="mb-16 animate-fade-up">
-          <h2 className="text-2xl font-semibold mb-6">Organizing Committee</h2>
+          <h2 className="text-2xl font-semibold mb-6">Организационный комитет</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {committees.organizing.map((member) => (
               <Card key={member.name} className="p-6">
@@ -58,7 +58,7 @@ const Committees = () => {
 
         {/* Program Committee */}
         <section className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          <h2 className="text-2xl font-semibold mb-6">Program Committee</h2>
+          <h2 className="text-2xl font-semibold mb-6">Программный комитет</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {committees.program.map((member) => (
               <Card key={member.name} className="p-6">

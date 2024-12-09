@@ -7,10 +7,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Главная", path: "/" },
-    { name: "Committees", path: "/committees" },
+    { name: "Комитеты", path: "/committees" },
     { name: "Секции", path: "/sections" },
-    { name: "Important Dates", path: "/dates" },
-    { name: "Submit", path: "/submit" },
+    { name: "Важные даты", path: "/dates" },
+    { name: "Отправить статью", path: "/submit" },
   ];
 
   return (
