@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { name: "Главная", path: "/" },
@@ -12,6 +13,11 @@ const Navbar = () => {
     { name: "Важные даты", path: "/dates" },
     { name: "Отправить статью", path: "/submit" },
   ];
+
+  const isActivePath = (path: string) => {
+    if (path === "/" && location.pathname !== "/") return false;
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
@@ -29,7 +35,11 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-gray-600 hover:text-accent transition-colors duration-200"
+                className={`transition-colors duration-200 ${
+                  isActivePath(item.path)
+                    ? "text-accent font-medium border-b-2 border-accent"
+                    : "text-gray-600 hover:text-accent"
+                }`}
               >
                 {item.name}
               </Link>
@@ -56,7 +66,11 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="block px-3 py-2 text-gray-600 hover:text-accent transition-colors duration-200"
+                className={`block px-3 py-2 transition-colors duration-200 ${
+                  isActivePath(item.path)
+                    ? "text-accent font-medium bg-accent/10"
+                    : "text-gray-600 hover:text-accent"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
