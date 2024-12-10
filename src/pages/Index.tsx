@@ -1,7 +1,13 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleSectionClick = (sectionTitle: string) => {
+    navigate('/sections', { state: { openSection: sectionTitle } });
+  };
+
   return (
     <div 
       className="min-h-screen bg-cover bg-center bg-no-repeat relative"
@@ -60,8 +66,9 @@ const Index = () => {
             ].map((topic, index) => (
               <div
                 key={topic}
-                className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm animate-fade-up"
+                className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm animate-fade-up cursor-pointer hover:bg-white/95 transition-all"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                onClick={() => handleSectionClick(topic)}
               >
                 {topic}
               </div>

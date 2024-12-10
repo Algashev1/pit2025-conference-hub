@@ -5,8 +5,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Sections = () => {
+  const location = useLocation();
+  const [openSection, setOpenSection] = useState<string | undefined>(
+    location.state?.openSection
+  );
+
   const sections = [
     {
       title: "Компьютерная оптика и нанофотоника",
@@ -65,6 +72,14 @@ const Sections = () => {
     },
   ];
 
+  useEffect(() => {
+    if (location.state?.openSection) {
+      setOpenSection(location.state.openSection);
+      // Clear the state after using it
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state?.openSection]);
+
   return (
     <div className="min-h-screen bg-secondary pt-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -84,7 +99,7 @@ const Sections = () => {
                 style={{ backgroundImage: `url(${section.image})` }}
               />
               <div className="p-6">
-                <Accordion type="single" collapsible>
+                <Accordion type="single" collapsible value={section.title === openSection ? "topics" : undefined}>
                   <AccordionItem value="topics">
                     <AccordionTrigger className="text-xl font-semibold text-accent">
                       {section.title}
