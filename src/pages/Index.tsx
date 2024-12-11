@@ -2,10 +2,12 @@ import { ArrowRight, ArrowUp } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import NewsletterSubscription from "@/components/NewsletterSubscription";
 
 const Index = () => {
   const navigate = useNavigate();
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
 
   const handleSectionClick = (sectionTitle: string) => {
     navigate('/sections', { state: { openSection: sectionTitle } });
@@ -44,13 +46,22 @@ const Index = () => {
           <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
             Добро пожаловать на ведущую научную конференцию по передовым информационным технологиям, которая объединяет исследователей, практиков и лидеров индустрии для обмена опытом, инновациями и достижениями.
           </p>
-          <Link
-            to="/submit"
-            className="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-200"
-          >
-            Отправить статью
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/submit"
+              className="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-200"
+            >
+              Отправить статью
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Button
+              variant="secondary"
+              onClick={() => setShowSubscriptionModal(true)}
+              className="inline-flex items-center px-6 py-3"
+            >
+              Подписаться на новости
+            </Button>
+          </div>
         </div>
 
         {/* Key Information */}
@@ -105,6 +116,11 @@ const Index = () => {
           <ArrowUp className="h-5 w-5" />
         </Button>
       )}
+
+      <NewsletterSubscription 
+        open={showSubscriptionModal} 
+        onOpenChange={setShowSubscriptionModal}
+      />
     </div>
   );
 };
