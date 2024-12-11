@@ -17,14 +17,9 @@ const Sections = () => {
   useEffect(() => {
     if (location.state?.openSection) {
       setOpenSection(location.state.openSection);
-      // Clear the state after using it
       window.history.replaceState({}, document.title);
     }
   }, [location.state?.openSection]);
-
-  const handleAccordionChange = (value: string) => {
-    setOpenSection(value === openSection ? undefined : value);
-  };
 
   const sections = [
     {
@@ -105,11 +100,11 @@ const Sections = () => {
               <div className="p-6">
                 <Accordion 
                   type="single" 
-                  collapsible 
-                  value={section.title === openSection ? "topics" : undefined}
-                  onValueChange={(value) => handleAccordionChange(section.title)}
+                  collapsible
+                  value={openSection === section.title ? section.title : undefined}
+                  onValueChange={(value) => setOpenSection(value)}
                 >
-                  <AccordionItem value="topics">
+                  <AccordionItem value={section.title}>
                     <AccordionTrigger className="text-xl font-semibold text-accent">
                       {section.title}
                     </AccordionTrigger>
