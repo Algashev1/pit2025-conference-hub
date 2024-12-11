@@ -14,6 +14,18 @@ const Sections = () => {
     location.state?.openSection
   );
 
+  useEffect(() => {
+    if (location.state?.openSection) {
+      setOpenSection(location.state.openSection);
+      // Clear the state after using it
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state?.openSection]);
+
+  const handleAccordionChange = (value: string) => {
+    setOpenSection(value === openSection ? undefined : value);
+  };
+
   const sections = [
     {
       title: "Компьютерная оптика и нанофотоника",
@@ -72,14 +84,6 @@ const Sections = () => {
     },
   ];
 
-  useEffect(() => {
-    if (location.state?.openSection) {
-      setOpenSection(location.state.openSection);
-      // Clear the state after using it
-      window.history.replaceState({}, document.title);
-    }
-  }, [location.state?.openSection]);
-
   return (
     <div className="min-h-screen bg-secondary pt-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -99,7 +103,12 @@ const Sections = () => {
                 style={{ backgroundImage: `url(${section.image})` }}
               />
               <div className="p-6">
-                <Accordion type="single" collapsible value={section.title === openSection ? "topics" : undefined}>
+                <Accordion 
+                  type="single" 
+                  collapsible 
+                  value={section.title === openSection ? "topics" : undefined}
+                  onValueChange={(value) => handleAccordionChange(section.title)}
+                >
                   <AccordionItem value="topics">
                     <AccordionTrigger className="text-xl font-semibold text-accent">
                       {section.title}
