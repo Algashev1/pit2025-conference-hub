@@ -20,11 +20,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-gradient-primary/80 backdrop-blur-md z-50 border-b border-white/10">
+    <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-white hover:text-white/90 transition-colors">
+            <Link to="/" className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
               ПИТ-2025
             </Link>
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 className={`transition-all duration-200 font-medium ${
                   isActivePath(item.path)
                     ? "text-accent font-semibold border-b-2 border-accent"
-                    : "text-white hover:text-accent"
+                    : "text-gray-600 hover:text-accent"
                 }`}
               >
                 {item.name}
@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-accent focus:outline-none"
+              className="text-gray-600 hover:text-accent focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -60,7 +60,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-gradient-primary/95 backdrop-blur-md border-b border-white/10">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <Link
@@ -68,8 +68,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`block px-3 py-2 rounded-lg transition-colors duration-200 ${
                   isActivePath(item.path)
-                    ? "text-accent font-medium bg-white/10"
-                    : "text-white hover:text-accent hover:bg-white/5"
+                    ? "text-accent font-medium bg-gray-50"
+                    : "text-gray-600 hover:text-accent hover:bg-gray-50"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
