@@ -71,6 +71,8 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(circle 918px at 13.1% 25%, rgba(255,207,139,0.50) 1.1%, rgba(255,207,139,1) 81.3%)',
+        'gradient-primary': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
+        'gradient-secondary': 'linear-gradient(to right, #243949 0%, #517fa4 100%)',
       },
     },
   },
