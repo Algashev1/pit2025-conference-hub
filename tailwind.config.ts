@@ -25,15 +25,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#4A5568",
+          DEFAULT: "#1A1F2C",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F1F0FB",
+          DEFAULT: "#F6F7F9",
           foreground: "#1A1F2C",
         },
         accent: {
-          DEFAULT: "#718096",
+          DEFAULT: "#4A90E2",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -68,11 +68,6 @@ export default {
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle at center, #F8FAFC 0%, #EDF2F7 100%)',
-        'gradient-primary': 'linear-gradient(to right, #E2E8F0 0%, #CBD5E0 100%)',
-        'gradient-secondary': 'linear-gradient(to right, #4A5568 0%, #2D3748 100%)',
       },
     },
   },
