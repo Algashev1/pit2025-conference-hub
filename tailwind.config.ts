@@ -25,7 +25,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#4A5568",
+          DEFAULT: "#8B5CF6",
           foreground: "#FFFFFF",
         },
         secondary: {
@@ -33,7 +33,7 @@ export default {
           foreground: "#1A1F2C",
         },
         accent: {
-          DEFAULT: "#718096",
+          DEFAULT: "#D946EF",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -70,9 +70,7 @@ export default {
         "fade-in": "fade-in 0.3s ease-out",
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle at center, #F8FAFC 0%, #EDF2F7 100%)',
-        'gradient-primary': 'linear-gradient(to right, #E2E8F0 0%, #CBD5E0 100%)',
-        'gradient-secondary': 'linear-gradient(to right, #4A5568 0%, #2D3748 100%)',
+        'gradient-radial': 'radial-gradient(circle 918px at 13.1% 25%, rgba(255,207,139,0.50) 1.1%, rgba(255,207,139,1) 81.3%)',
       },
     },
   },
