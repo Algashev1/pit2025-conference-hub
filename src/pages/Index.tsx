@@ -1,126 +1,100 @@
-import { ArrowRight, ArrowUp } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import NewsletterSubscription from "@/components/NewsletterSubscription";
 
 const Index = () => {
-  const navigate = useNavigate();
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
-
-  const handleSectionClick = (sectionTitle: string) => {
-    navigate('/sections', { state: { openSection: sectionTitle } });
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070')",
-      }}
-    >
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90" />
-      
-      <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
-        <div className="max-w-7xl mx-auto text-center animate-fade-up">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Международная научно-техническая конференция "Перспективные информационные технологии"
-            <span className="text-accent"> (ПИТ-2025)</span>
-          </h1>
-          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-            Добро пожаловать на ведущую научную конференцию по передовым информационным технологиям, которая объединяет исследователей, практиков и лидеров индустрии для обмена опытом, инновациями и достижениями.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              to="/submit"
-              className="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-200"
-            >
-              Отправить статью
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Button
-              variant="secondary"
-              onClick={() => setShowSubscriptionModal(true)}
-              className="inline-flex items-center px-6 py-3"
-            >
-              Подписаться на новости
-            </Button>
+    <div className="min-h-screen bg-gradient-to-b from-white to-secondary">
+      {/* Hero Section */}
+      <div className="pt-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="flex-1 animate-fade-up">
+              <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
+                VOLGA<br />CYBER<br />WEEK
+              </h1>
+              <p className="text-lg text-gray-600 mb-6">
+                Международная научно-техническая конференция
+              </p>
+              <Link to="/submit">
+                <Button className="bg-accent hover:bg-accent/90 text-white">
+                  Отправить статью
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+            <div className="flex-1">
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/lovable-uploads/b62e13b8-2feb-47a4-8151-392ea1e70508.png"
+                  alt="Cyber visualization"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Key Information */}
-        <div className="max-w-7xl mx-auto mt-20 grid md:grid-cols-3 gap-8 px-4">
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <h3 className="text-lg font-semibold mb-2">Место проведение</h3>
-            <p className="text-gray-600">г. Самара, Молодогвардейская ул., 151 (первый корпус Самарского университета)</p>
+        <div className="max-w-7xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 bg-accent/10 rounded-2xl p-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2">Место проведения</h3>
+            <p className="text-gray-600">г. Самара, Молодогвардейская ул., 151</p>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="text-center">
             <h3 className="text-lg font-semibold mb-2">Даты проведения</h3>
-            <p className="text-gray-600">10-12 марта 2025 г.</p>
+            <p className="text-gray-600">24-26 марта 2025 г.</p>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <h3 className="text-lg font-semibold mb-2">Окончание приёма материалов доклада</h3>
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-2">Окончание приёма материалов</h3>
             <p className="text-gray-600">1 февраля 2025</p>
           </div>
         </div>
 
-        {/* Topics Preview */}
-        <div className="max-w-7xl mx-auto mt-20 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-white">Секции</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Sections Preview */}
+        <div className="max-w-7xl mx-auto mt-20 mb-20">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-3xl font-bold text-primary">Секции конференции</h2>
+            <Button variant="outline" asChild>
+              <Link to="/sections">Скачать положение</Link>
+            </Button>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Компьютерная оптика и нанофотоника",
-              "Информационные технологии дистанционного зондирования Земли",
-              "Искусственный интеллект",
-              "Науки о данных",
-              "Информационные технологии в биомедицине",
-            ].map((topic, index) => (
+              {
+                title: "Компьютерная оптика и нанофотоника",
+                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"
+              },
+              {
+                title: "Искусственный интеллект",
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"
+              },
+              {
+                title: "Информационные технологии в биомедицине",
+                image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800"
+              },
+              {
+                title: "Науки о данных",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+              },
+            ].map((section, index) => (
               <div
-                key={topic}
-                className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm animate-fade-up cursor-pointer hover:bg-white/95 transition-all"
+                key={section.title}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-                onClick={() => handleSectionClick(topic)}
               >
-                {topic}
+                <div 
+                  className="h-48 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${section.image})` }}
+                />
+                <div className="p-6">
+                  <h3 className="font-medium text-lg">{section.title}</h3>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <Button
-          variant="secondary"
-          size="icon"
-          className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in"
-          onClick={scrollToTop}
-          aria-label="Вернуться наверх"
-        >
-          <ArrowUp className="h-5 w-5" />
-        </Button>
-      )}
-
-      <NewsletterSubscription 
-        open={showSubscriptionModal} 
-        onOpenChange={setShowSubscriptionModal}
-      />
     </div>
   );
 };

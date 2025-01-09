@@ -7,10 +7,10 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Главная", path: "/" },
-    { name: "Комитеты", path: "/committees" },
     { name: "Секции", path: "/sections" },
-    { name: "Важные даты", path: "/dates" },
+    { name: "Даты", path: "/dates" },
+    { name: "Комитеты", path: "/committees" },
+    { name: "Контакты", path: "/contacts" },
     { name: "Отправить статью", path: "/submit" },
   ];
 
@@ -20,12 +20,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
+    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-semibold text-primary">
-              ПИТ-2025
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/logo.svg" alt="VCW-2025" className="h-8 w-8" />
+              <span className="text-xl font-semibold text-primary">VCW-2025</span>
             </Link>
           </div>
 
@@ -37,7 +38,7 @@ const Navbar = () => {
                 to={item.path}
                 className={`transition-colors duration-200 ${
                   isActivePath(item.path)
-                    ? "text-accent font-medium border-b-2 border-accent"
+                    ? "text-accent font-medium"
                     : "text-gray-600 hover:text-accent"
                 }`}
               >

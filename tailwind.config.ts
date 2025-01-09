@@ -25,15 +25,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1A1F2C",
+          DEFAULT: "#0A0F2C",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F6F7F9",
-          foreground: "#1A1F2C",
+          DEFAULT: "#F0F2F5",
+          foreground: "#0A0F2C",
         },
         accent: {
-          DEFAULT: "#4A90E2",
+          DEFAULT: "#00C2FF",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -68,6 +68,9 @@ export default {
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/lovable-uploads/b62e13b8-2feb-47a4-8151-392ea1e70508.png')",
       },
     },
   },
