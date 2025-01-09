@@ -25,15 +25,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0A0F2C",
+          DEFAULT: "#4A5568",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F0F2F5",
-          foreground: "#0A0F2C",
+          DEFAULT: "#F1F0FB",
+          foreground: "#1A1F2C",
         },
         accent: {
-          DEFAULT: "#00C2FF",
+          DEFAULT: "#718096",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -70,7 +70,9 @@ export default {
         "fade-in": "fade-in 0.3s ease-out",
       },
       backgroundImage: {
-        'hero-pattern': "url('/lovable-uploads/b62e13b8-2feb-47a4-8151-392ea1e70508.png')",
+        'gradient-radial': 'radial-gradient(circle at center, #F8FAFC 0%, #EDF2F7 100%)',
+        'gradient-primary': 'linear-gradient(to right, #E2E8F0 0%, #CBD5E0 100%)',
+        'gradient-secondary': 'linear-gradient(to right, #4A5568 0%, #2D3748 100%)',
       },
     },
   },
