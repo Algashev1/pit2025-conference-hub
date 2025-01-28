@@ -27,23 +27,40 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#E6EDF2]">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070')",
+      }}
+    >
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90" />
+      
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8 flex items-center">
-            <div className="w-1/4 pr-8">
-              <h1 className="text-[#1E1933] text-4xl font-bold text-left">
-                Volga Cyber Week
-              </h1>
-            </div>
-            <div className="w-3/4">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                alt="Conference"
-                className="w-full h-[400px] object-cover rounded-lg"
-              />
-            </div>
+        <div className="max-w-7xl mx-auto text-center animate-fade-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+            Международная научно-техническая конференция "Перспективные информационные технологии"
+            <span className="text-accent"> (ПИТ-2025)</span>
+          </h1>
+          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            Добро пожаловать на ведущую научную конференцию по передовым информационным технологиям, которая объединяет исследователей, практиков и лидеров индустрии для обмена опытом, инновациями и достижениями.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/submit"
+              className="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-200"
+            >
+              Отправить статью
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Button
+              variant="secondary"
+              onClick={() => setShowSubscriptionModal(true)}
+              className="inline-flex items-center px-6 py-3"
+            >
+              Подписаться на новости
+            </Button>
           </div>
         </div>
 
@@ -65,7 +82,7 @@ const Index = () => {
 
         {/* Topics Preview */}
         <div className="max-w-7xl mx-auto mt-20 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-[#1E1933]">Секции</h2>
+          <h2 className="text-3xl font-bold mb-8 text-white">Секции</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               "Компьютерная оптика и нанофотоника",
