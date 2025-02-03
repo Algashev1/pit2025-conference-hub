@@ -8,10 +8,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "О конференции", path: "/" },
-    { name: "Даты", path: "/committees" },
-    { name: "Участникам", path: "/sections" },
-    { name: "Контакты", path: "/dates" },
-    { name: "Отправить статью", path: "/submit" },
+    { name: "Даты", path: "/" },
+    { name: "Участникам", path: "/" },
+    { name: "Контакты", path: "/" },
+    { name: "Отправить статью", path: "/" },
   ];
 
   const isActivePath = (path: string) => {
@@ -23,14 +23,14 @@ const Navbar = () => {
     <nav className="fixed w-full bg-[#1E1933] z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center h-16">
-          <div className="flex items-center justify-center space-x-8">
+          <div className="flex items-center justify-center space-x-10">
             <Link to="/" className="flex items-center text-xl font-semibold text-white">
               <Brain className="w-6 h-6 mr-2 text-white" />
               VCW-2025
             </Link>
             
             {/* Desktop menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-5 lg:space-x-10">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden absolute right-4">
+          <div className="md:hidden absolute right-4 top-1.2">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-gray-300 focus:outline-none"

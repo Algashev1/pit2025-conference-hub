@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex items-center justify-center md:justify-start space-x-2 mb-2">
               <Mail className="h-5 w-5" />
               <a href="mailto:pit2025@ssau.ru" className="hover:text-accent transition-colors">
-                pit2025@ssau.ru
+                vcw025@ssau.ru
               </a>
             </div>
             <div className="flex items-center justify-center md:justify-start space-x-2">
@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-center md:text-right text-sm text-gray-300">
-            <p>© 2024 ПИТ-2025</p>
+            <p>© 2025 VCW-2025</p>
             <p>Самарский университет</p>
           </div>
         </div>

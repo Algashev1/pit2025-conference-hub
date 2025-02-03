@@ -30,25 +30,40 @@ const Index = () => {
     <div className="min-h-screen bg-[#E6EDF2]">
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8 flex items-center">
-            <div className="w-1/4 pr-8">
-              <h1 className="text-[#1E1933] text-4xl font-bold text-left">
-                Volga Cyber Week
-              </h1>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-8 pb-5">
+            <div className="md:flex items-center">
+              <div className="md:w-2/5 md:pr-8 pb-4 md:pb-0">
+                <h1 className="text-[#1E1933] text-7xl text-center md:text-left" style={{lineHeight: 1.3}}>
+                  VOLGA CYBER WEEK
+                </h1>
+              </div>
+              <div className="md:w-3/5 md:w-3/5">
+                <img
+                  src="../../public/1.png"
+                  alt="Conference"
+                  className="w-full h-[350px] object-cover rounded-lg"
+                />
+              </div>
             </div>
-            <div className="w-3/4">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                alt="Conference"
-                className="w-full h-[400px] object-cover rounded-lg"
-              />
+            <div className="md:flex md:justify-between md:items-center pt-7">
+              <div className="pb-4 text-center md:pb-0 md:text-left">
+                Международная научно-техническая конференция
+              </div>
+              <div className="flex sm:justify-between">
+              <button type="button" className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full  text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                ОТПРАВИТЬ СТАТЬЮ
+              </button >
+              </div>
+             
             </div>
+            
+
           </div>
         </div>
 
         {/* Key Information */}
-        <div className="max-w-7xl mx-auto mt-20 grid md:grid-cols-3 gap-8 px-4">
+        {/* <div className="max-w-7xl mx-auto mt-20 grid md:grid-cols-3 gap-8 px-4">
           <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <h3 className="text-lg font-semibold mb-2">Место проведение</h3>
             <p className="text-gray-600">г. Самара, Молодогвардейская ул., 151 (первый корпус Самарского университета)</p>
@@ -61,10 +76,10 @@ const Index = () => {
             <h3 className="text-lg font-semibold mb-2">Окончание приёма материалов доклада</h3>
             <p className="text-gray-600">1 февраля 2025</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Topics Preview */}
-        <div className="max-w-7xl mx-auto mt-20 text-center">
+        {/* <div className="max-w-7xl mx-auto mt-20 text-center">
           <h2 className="text-3xl font-bold mb-8 text-[#1E1933]">Секции</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
@@ -84,11 +99,11 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll to Top Button */}
-      {showScrollTop && (
+      {/* {showScrollTop && (
         <Button
           variant="secondary"
           size="icon"
@@ -98,12 +113,12 @@ const Index = () => {
         >
           <ArrowUp className="h-5 w-5" />
         </Button>
-      )}
+      )} */}
 
-      <NewsletterSubscription 
+      {/* <NewsletterSubscription 
         open={showSubscriptionModal} 
         onOpenChange={setShowSubscriptionModal}
-      />
+      /> */}
     </div>
   );
 };
