@@ -40,7 +40,7 @@ const Index = () => {
               </div>
               <div className="md:w-3/5 md:w-3/5">
                 <img
-                  src="public/1.png"
+                  src="dist/1.png"
                   alt="Conference"
                   className="w-full h-[350px] object-cover rounded-lg"
                 />
