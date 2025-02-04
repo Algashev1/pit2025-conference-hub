@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUp, FileText } from "lucide-react";
+import { ArrowRight, ArrowUp, FileText, Plus } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ const Index = () => {
   const navigate = useNavigate();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
 
   const sections = [
     {
@@ -47,6 +48,13 @@ const Index = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const toggleCard = (title: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
   };
 
   return (
@@ -142,16 +150,34 @@ const Index = () => {
           {sections.map((section, index) => (
             <div 
               key={section.title}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up relative"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-accent font-medium p-4">
-                {section.title}
-              </h3>
-              <div 
-                className="h-48 w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${section.image})` }}
-              />
+              <div className="flex justify-between items-center p-4">
+                <h3 className="text-accent font-medium">
+                  {section.title}
+                </h3>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-accent hover:text-accent/80"
+                  onClick={() => toggleCard(section.title)}
+                >
+                  <Plus className="h-5 w-5" />
+                </Button>
+              </div>
+              <div className="h-48">
+                {expandedCards[section.title] ? (
+                  <div className="p-4 h-full flex items-center justify-center text-accent">
+                    {section.title}
+                  </div>
+                ) : (
+                  <div 
+                    className="h-full w-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${section.image})` }}
+                  />
+                )}
+              </div>
             </div>
           ))}
         </div>
