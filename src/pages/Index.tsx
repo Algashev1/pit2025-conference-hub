@@ -13,27 +13,27 @@ const Index = () => {
   const sections = [
     {
       title: "Компьютерная оптика и фотоника",
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
+      image: "11.png",
     },
     {
       title: "Искусственный интеллект",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+      image: "22.png",
     },
     {
       title: "Математическое моделирование",
-      image: "https://images.unsplash.com/photo-1635241161466-541f065683ba?w=800",
+      image: "33.png",
     },
     {
       title: "Биотехнические системы и технологии",
-      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800",
+      image: "44.png",
     },
     {
       title: "Электроника и интернет вещей",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+      image: "55.png",
     },
     {
       title: "Наука о данных",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      image: "66.png",
     },
   ];
 
@@ -193,7 +193,7 @@ const Index = () => {
                 ) : (
                   <div 
                     className="h-full w-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${section.image})` }}
+                    style={{ backgroundImage: `url("${section.image}")` }}
                   />
                 )}
               </div>
