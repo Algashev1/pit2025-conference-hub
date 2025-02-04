@@ -208,18 +208,18 @@ const Index = () => {
           ВАЖНЫЕ ДАТЫ
         </h2>
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 right-0 h-0.5 top-4 bg-gradient-to-r from-[#17C54E] via-[#00A7E1] to-[#004876]" />
+          {/* Timeline line - horizontal on desktop, vertical on mobile */}
+          <div className="absolute md:left-0 md:right-0 md:h-0.5 md:top-4 md:w-full h-full w-0.5 left-4 top-0 bg-gradient-to-r md:from-[#17C54E] md:via-[#00A7E1] md:to-[#004876] bg-gradient-to-b from-[#17C54E] via-[#00A7E1] to-[#004876]" />
           
           {/* Timeline points */}
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
             {importantDates.map((item, index) => (
-              <div key={index} className="relative pt-8">
+              <div key={index} className="relative md:pt-8 pl-12 md:pl-0">
                 {/* Circle point */}
-                <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
+                <div className="absolute md:top-3 md:left-1/2 top-1.5 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
                 
                 {/* Content */}
-                <div className="text-center">
+                <div className="md:text-center text-left">
                   <p className="text-[#00A7E1] text-lg font-medium mb-2">
                     {item.date}
                   </p>
