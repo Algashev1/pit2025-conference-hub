@@ -151,7 +151,7 @@ const Index = () => {
       {/* Conference Sections */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold text-primary">
+          <h2 className="text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
           <div className="flex items-center gap-2">
@@ -173,7 +173,7 @@ const Index = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex justify-between items-center p-4">
-                <h3 className="text-accent font-medium">
+                <h3 className="text-[#00A7E1] font-medium text-xl">
                   {section.title}
                 </h3>
                 <Button
