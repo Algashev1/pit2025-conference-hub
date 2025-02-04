@@ -37,6 +37,25 @@ const Index = () => {
     },
   ];
 
+  const importantDates = [
+    {
+      date: "1 января, 2025",
+      description: "Начало приёма материалов доклада"
+    },
+    {
+      date: "1 марта, 2025",
+      description: "Конец приёма материалов доклада"
+    },
+    {
+      date: "17 марта, 2025",
+      description: "Объявление списка рекомендованных к публикации тезисов статей"
+    },
+    {
+      date: "24-26 марта, 2025",
+      description: "Проведение конференции"
+    }
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -180,6 +199,37 @@ const Index = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Important Dates */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+        <h2 className="text-2xl font-bold text-primary mb-12">
+          ВАЖНЫЕ ДАТЫ
+        </h2>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-0 right-0 h-0.5 top-4 bg-gradient-to-r from-[#17C54E] via-[#00A7E1] to-[#004876]" />
+          
+          {/* Timeline points */}
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+            {importantDates.map((item, index) => (
+              <div key={index} className="relative pt-8">
+                {/* Circle point */}
+                <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
+                
+                {/* Content */}
+                <div className="text-center">
+                  <p className="text-[#00A7E1] text-lg font-medium mb-2">
+                    {item.date}
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
