@@ -55,52 +55,48 @@ const Index = () => {
                 ОТПРАВИТЬ СТАТЬЮ
               </button >
               </div>
-             
-            </div>
-            
-
+            </div>   
           </div>
         </div>
-
-        {/* Key Information */}
-        {/* <div className="max-w-7xl mx-auto mt-20 grid md:grid-cols-3 gap-8 px-4">
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <h3 className="text-lg font-semibold mb-2">Место проведение</h3>
-            <p className="text-gray-600">г. Самара, Молодогвардейская ул., 151 (первый корпус Самарского университета)</p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <h3 className="text-lg font-semibold mb-2">Даты проведения</h3>
-            <p className="text-gray-600">10-12 марта 2025 г.</p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-sm animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <h3 className="text-lg font-semibold mb-2">Окончание приёма материалов доклада</h3>
-            <p className="text-gray-600">1 февраля 2025</p>
-          </div>
-        </div> */}
-
-        {/* Topics Preview */}
-        {/* <div className="max-w-7xl mx-auto mt-20 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-[#1E1933]">Секции</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              "Компьютерная оптика и нанофотоника",
-              "Информационные технологии дистанционного зондирования Земли",
-              "Искусственный интеллект",
-              "Науки о данных",
-              "Информационные технологии в биомедицине",
-            ].map((topic, index) => (
-              <div
-                key={topic}
-                className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm animate-fade-up cursor-pointer hover:bg-white/95 transition-all"
-                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-                onClick={() => handleSectionClick(topic)}
-              >
-                {topic}
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
+
+      <div className="pt-10 pb-5 dates-line">
+          <div className="md:flex justify-between max-w-4xl mx-auto  px-4 md:px-4">
+            <div className="date-block">
+              <div className="date-title">
+                Место проведения
+              </div>
+              <div>
+                г. Самара
+              </div>
+              <div>
+                ул. Молодогвардейская, 151
+              </div>
+            </div>
+            <div className="date-block">
+              <div className="date-title">
+                Конец приёма материалов
+              </div>
+              <div className="hidden md:flex">
+                &nbsp;
+              </div>
+              <div>
+                1 марта 2025 г.
+              </div>
+            </div>
+            <div className="date-block">
+              <div className="date-title">
+                Даты проведения
+              </div>
+              <div className="hidden md:flex">
+                &nbsp;
+              </div>
+              <div>
+                24-25 марта 2025 г.
+              </div>
+            </div>
+          </div>
+        </div>
 
       {/* Scroll to Top Button */}
       {/* {showScrollTop && (
