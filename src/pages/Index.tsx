@@ -160,10 +160,10 @@ const Index = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-accent hover:text-accent/80"
+                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-8 h-8 flex items-center justify-center"
                   onClick={() => toggleCard(section.title)}
                 >
-                  <Plus className="h-5 w-5" />
+                  <Plus className="h-4 w-4" />
                 </Button>
               </div>
               <div className="h-48">
