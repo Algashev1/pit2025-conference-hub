@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUp } from "lucide-react";
+import { ArrowRight, ArrowUp, FileText } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,32 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
 
-  const handleSectionClick = (sectionTitle: string) => {
-    navigate('/sections', { state: { openSection: sectionTitle } });
-  };
+  const sections = [
+    {
+      title: "Компьютерная оптика и фотоника",
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
+    },
+    {
+      title: "Искусственный интеллект",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    },
+    {
+      title: "Математическое моделирование",
+      image: "https://images.unsplash.com/photo-1635241161466-541f065683ba?w=800",
+    },
+    {
+      title: "Биотехнические системы и технологии",
+      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800",
+    },
+    {
+      title: "Электроника и интернет вещей",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+    },
+    {
+      title: "Наука о данных",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,10 +119,45 @@ const Index = () => {
               </div>
             </div>
           </div>
+      </div>
+
+      {/* Conference Sections */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold text-primary">
+            СЕКЦИИ КОНФЕРЕНЦИИ
+          </h2>
+          <div className="flex items-center gap-2">
+            <Link 
+              to="#" 
+              className="text-accent hover:text-accent/80 transition-colors"
+            >
+              Скачать положение
+            </Link>
+            <FileText className="w-5 h-5 text-accent" />
+          </div>
         </div>
 
-      {/* Scroll to Top Button */}
-      {/* {showScrollTop && (
+        <div className="grid md:grid-cols-2 gap-6">
+          {sections.map((section, index) => (
+            <div 
+              key={section.title}
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className="text-accent font-medium p-4">
+                {section.title}
+              </h3>
+              <div 
+                className="h-48 w-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${section.image})` }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {showScrollTop && (
         <Button
           variant="secondary"
           size="icon"
@@ -109,12 +167,12 @@ const Index = () => {
         >
           <ArrowUp className="h-5 w-5" />
         </Button>
-      )} */}
+      )}
 
-      {/* <NewsletterSubscription 
+      <NewsletterSubscription 
         open={showSubscriptionModal} 
         onOpenChange={setShowSubscriptionModal}
-      /> */}
+      />
     </div>
   );
 };
