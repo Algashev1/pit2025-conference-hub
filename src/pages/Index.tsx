@@ -108,7 +108,7 @@ const Index = () => {
 
   const importantDates = [
     {
-      date: "1 января, 2025",
+      date: "10 февраля, 2025",
       description: "Начало приёма материалов доклада"
     },
     {
@@ -117,7 +117,11 @@ const Index = () => {
     },
     {
       date: "17 марта, 2025",
-      description: "Объявление списка рекомендованных к публикации тезисов статей"
+      description: "Объявление списка принятых докладов"
+    },
+    {
+      date: "14 апреля, 2025",
+      description: "Объявление списка принятых к публикации тезисов докладов"
     },
     {
       date: "24-26 марта, 2025",
@@ -146,7 +150,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#E6EDF2]">
+    <div className="min-h-full bg-[#E6EDF2]">
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
@@ -279,15 +283,15 @@ const Index = () => {
 
       {/* Important Dates */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
-        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ВАЖНЫЕ ДАТЫ
         </h2>
-        <div className="relative">
+        <div className="relative mb-16">
           {/* Timeline line - horizontal on desktop, vertical on mobile */}
           <div className="absolute md:left-0 md:right-0 md:h-0.5 md:top-4 md:w-full h-full w-0.5 left-4 top-0 bg-gradient-to-r md:from-[#17C54E] md:via-[#00A7E1] md:to-[#004876] bg-gradient-to-b from-[#17C54E] via-[#00A7E1] to-[#004876]" />
           
           {/* Timeline points */}
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-5 gap-4 pt-2 md:pt-0">
             {importantDates.map((item, index) => (
               <div key={index} className="relative md:pt-8 pl-12 md:pl-0">
                 {/* Circle point */}
@@ -295,7 +299,7 @@ const Index = () => {
                 
                 {/* Content */}
                 <div className="md:text-center text-left">
-                  <p className="text-[#00A7E1] text-lg font-medium mb-2">
+                  <p className="text-[#00A7E1] text-base font-medium mb-2">
                     {item.date}
                   </p>
                   <p className="text-sm text-gray-700">
