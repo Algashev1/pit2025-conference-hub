@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUp, FileText, Plus } from "lucide-react";
+import { ArrowRight, ArrowUp, FileText, Plus, Minus } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,26 +14,95 @@ const Index = () => {
     {
       title: "Компьютерная оптика и фотоника",
       image: "11.png",
+      items: [
+        "дифракционная оптика",
+        "гиперспектральные системы",
+        "фотоника и нанофотоника",
+        "оптические сенсоры",
+        "оптоинформатика",
+        "спектроскопия",
+        "фотонные материалы",
+        "полупроводниковые технологии",
+        "наноматериалы и нанотехнологии",
+        "интегральная электроника и наноэлектроника"
+      ]
     },
     {
       title: "Искусственный интеллект",
       image: "22.png",
+      items: [
+        "распознавание образов и машинное зрение",
+        "машинное обучение",
+        "нейронные сети и глубокое обучение",
+        "интеллектуальный анализ изображений",
+        "интеллектуальный анализ текстов",
+        "мультимодальные интеллектуальные системы",
+        "прикладные технологии искусственного интеллекта",
+        "программные технологии для решения задач искусственного интеллекта",
+      ]
     },
     {
       title: "Математическое моделирование",
       image: "33.png",
+      items: [
+        "математическое моделирование",
+        "математические модели в прикладных задачах",
+        "дифференциальные уравнения",
+        "численные методы",
+        "теория управления",
+        "математическая физика",
+        "математические алгоритмы",
+        "линейная алгебра и геометрия",
+        "математический анализ",
+        "дискретная математика"
+      ]
     },
     {
       title: "Биотехнические системы и технологии",
       image: "44.png",
+      items: [
+        "анализ биомедицинских данных, сигналов, и изображений",
+        "биомедицинская визуализация",
+        "медицинские информационные системы ",
+        "терапевтические и диагностические системы системы поддержки принятия решений",
+        "биомедицинские датчики ",
+        "биомедицинская электроника",
+        "моделирование биофизических процессов",
+        "оптические технологии в медицине",
+        "биофотоника",
+      ]
     },
     {
       title: "Электроника и интернет вещей",
       image: "55.png",
+      items: [
+        "радиоэлектронные средства",
+        "микроэлектроника",
+        "антенны и СВЧ устройства ",
+        "защита информации в телекоммуникации",
+        "научное приборостроение ",
+        "измерительные преобразователи и датчики",
+        "волоконно-оптические системы ",
+        "интернет вещей",
+        "техническая кибернетика и робототехника",
+        "системы управления и автоматизации"
+      ]
     },
     {
       title: "Наука о данных",
       image: "66.png",
+      items: [
+        "компьютерные науки",
+        "инженерия данных",
+        "высокопроизводительные, параллельные, распределённые и облачные вычисления",
+        "технологии обработки больших данных",
+        "базы данных",
+        "прикладные задачи анализа данных",
+        "визуализация данных",
+        "анализ временных рядов",
+        "анализ текстовой информации",
+        "цифровая обработка сигналов и изображений"
+      ]
     },
   ];
 
@@ -142,7 +211,7 @@ const Index = () => {
                 &nbsp;
               </div>
               <div>
-                24-25 марта 2025 г.
+                24-26 марта 2025 г.
               </div>
             </div>
           </div>
@@ -151,7 +220,7 @@ const Index = () => {
       {/* Conference Sections */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-4xl font-bold text-primary">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
           <div className="flex items-center gap-2">
@@ -169,26 +238,32 @@ const Index = () => {
           {sections.map((section, index) => (
             <div 
               key={section.title}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up relative"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up relative flex flex-col justify-between"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex justify-between items-center p-4">
-                <h3 className="text-[#00A7E1] font-medium text-xl">
+              <div className="grow flex justify-between items-center p-4" style={{maxHeight: 88}}>
+                <h3 className="w-4/5 text-[#00A7E1] font-medium text-xl">
                   {section.title}
                 </h3>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-8 h-8 flex items-center justify-center"
+                  className="ml-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-10 h-10 flex items-center justify-center"
                   onClick={() => toggleCard(section.title)}
                 >
-                  <Plus className="h-4 w-4" />
+                  {
+                    expandedCards[section.title] ? ( <Minus className="h-8 w-8" />) : (   <Plus className="h-8 w-8" />)
+                  }
                 </Button>
               </div>
-              <div className="h-48">
+              <div className="h-64 text-[#1E1933] ">
                 {expandedCards[section.title] ? (
-                  <div className="p-4 h-full flex items-center justify-center text-accent">
-                    {section.title}
+                  <div className="p-4 pt-0 h-full flex flex-col text-sm">
+                    {
+                      section.items.map((item, i) => (
+                        <li>{item}</li>
+                      ))   
+                    }
                   </div>
                 ) : (
                   <div 
@@ -204,7 +279,7 @@ const Index = () => {
 
       {/* Important Dates */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
-        <h2 className="text-2xl font-bold text-primary mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-12">
           ВАЖНЫЕ ДАТЫ
         </h2>
         <div className="relative">
