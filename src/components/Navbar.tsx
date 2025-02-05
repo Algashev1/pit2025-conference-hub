@@ -8,8 +8,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "О конференции", path: "/" },
-    { name: "Даты", path: "/" },
-    { name: "Участникам", path: "/" },
+    { name: "Секции конференции", path: "/" },
+    { name: "Важные даты", path: "/" },
     { name: "Контакты", path: "/" },
     { name: "Отправить статью", path: "/" },
   ];
