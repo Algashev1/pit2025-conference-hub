@@ -43,8 +43,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden absolute right-4 top-1.2">
+          {/* Mobile menu button - now vertically centered */}
+          <div className="md:hidden absolute right-4 flex items-center h-16">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-gray-300 focus:outline-none"
