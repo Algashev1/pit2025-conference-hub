@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUp, FileText, Plus, Minus } from "lucide-react";
+import { ArrowRight, ArrowUp, FileText, Plus, Minus, Phone, Mail, MapPin } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -151,8 +151,8 @@ const Index = () => {
 
   return (
     <div className="min-h-full bg-[#E6EDF2]">
+      {/* Hero Section */}
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8 pb-5">
             <div className="md:flex items-center">
@@ -265,7 +265,7 @@ const Index = () => {
                   <div className="p-4 pt-0 h-full flex flex-col text-sm">
                     {
                       section.items.map((item, i) => (
-                        <li>{item}</li>
+                        <li key={i}>{item}</li>
                       ))   
                     }
                   </div>
@@ -308,6 +308,62 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Contacts Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
+          КОНТАКТЫ
+        </h2>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="w-full md:w-1/2 space-y-4">
+            {/* Phone */}
+            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-[#E6EDF2] p-2 rounded-full">
+                <Phone className="w-6 h-6 text-[#00A7E1]" />
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">Телефон</div>
+                <div className="text-primary">+7 (846) 267-46-35</div>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-[#E6EDF2] p-2 rounded-full">
+                <Mail className="w-6 h-6 text-[#00A7E1]" />
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">Почта</div>
+                <div className="text-primary">email_adress@ssau.ru</div>
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-[#E6EDF2] p-2 rounded-full">
+                <MapPin className="w-6 h-6 text-[#00A7E1]" />
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">Адрес</div>
+                <div className="text-primary">ул. Молодогвардейская, 151</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="w-full md:w-1/2 h-[300px] bg-white rounded-lg overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2390.289461749493!2d50.18774731580142!3d53.20095947994533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41661e426b30f92f%3A0x7c32fd47b0c13955!2z0YPQuy4g0JzQvtC70L7QtNC-0LPQstCw0YDQtNC10LnRgdC60LDRjywgMTUxLCDQodCw0LzQsNGA0LAsINCh0LDQvNCw0YDRgdC60LDRjyDQvtCx0LsuLCA0NDMxMDA!5e0!3m2!1sru!2sru!4v1650960587673!5m2!1sru!2sru" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>
