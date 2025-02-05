@@ -7,7 +7,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "О конференции", path: "/" },
     { name: "Секции конференции", path: "/" },
     { name: "Важные даты", path: "/" },
     { name: "Контакты", path: "/" },
