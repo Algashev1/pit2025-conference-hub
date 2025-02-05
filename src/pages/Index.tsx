@@ -318,33 +318,22 @@ const Index = () => {
           КОНТАКТЫ
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full md:w-1/2 space-y-4">
-            {/* Phone */}
-            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
-              <div className="bg-[#E6EDF2] p-2 rounded-full">
-                <Phone className="w-6 h-6 text-[#00A7E1]" />
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">Телефон</div>
-                <div className="text-primary">+7 (846) 267-46-35</div>
-              </div>
-            </div>
-
+          <div className="w-full flex justify-between flex-col md:flex-row gap-8">
             {/* Email */}
-            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
+            <div className="basis-1/2  bg-white rounded-lg p-4 flex items-center gap-4 h-24">
               <div className="bg-[#E6EDF2] p-2 rounded-full">
-                <Mail className="w-6 h-6 text-[#00A7E1]" />
+                <Mail className="w-6 h-6 text-[#1E1933]" />
               </div>
               <div>
                 <div className="text-sm text-gray-600">Почта</div>
-                <div className="text-primary">email_adress@ssau.ru</div>
+                <div className="text-primary">studscience_iic@ssau.ru</div>
               </div>
             </div>
 
             {/* Address */}
-            <div className="bg-white rounded-lg p-4 flex items-center gap-4">
+            <div className="basis-1/2 bg-white rounded-lg p-4 flex items-center gap-4 h-24">
               <div className="bg-[#E6EDF2] p-2 rounded-full">
-                <MapPin className="w-6 h-6 text-[#00A7E1]" />
+                <MapPin className="w-6 h-6 text-[#1E1933]" />
               </div>
               <div>
                 <div className="text-sm text-gray-600">Адрес</div>
@@ -353,19 +342,11 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Map */}
-          <div className="w-full md:w-1/2 h-[300px] bg-white rounded-lg overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2390.289461749493!2d50.18774731580142!3d53.20095947994533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41661e426b30f92f%3A0x7c32fd47b0c13955!2z0YPQuy4g0JzQvtC70L7QtNC-0LPQstCw0YDQtNC10LnRgdC60LDRjywgMTUxLCDQodCw0LzQsNGA0LAsINCh0LDQvNCw0YDRgdC60LDRjyDQvtCx0LsuLCA0NDMxMDA!5e0!3m2!1sru!2sru!4v1650960587673!5m2!1sru!2sru" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+    
         </div>
+          <div className="w-full mt-8 h-[300px] bg-white rounded-lg overflow-hidden">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A223ceca6596dff3653bb9c878f5fc65d32aff316f9684f188e19fe128ff4bd72&amp;source=constructor" width="100%" height="100%"></iframe>
+          </div>
       </div>
 
       {showScrollTop && (
