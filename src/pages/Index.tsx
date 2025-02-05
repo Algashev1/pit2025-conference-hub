@@ -271,8 +271,9 @@ const Index = () => {
                   </div>
                 ) : (
                   <div 
-                    className="h-full w-full bg-cover bg-center"
+                    className="h-full w-full bg-cover bg-center cursor-pointer"
                     style={{ backgroundImage: `url("${section.image}")` }}
+                    onClick={() => toggleCard(section.title)}
                   />
                 )}
               </div>
