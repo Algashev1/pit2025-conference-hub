@@ -174,7 +174,7 @@ const Index = () => {
                 Международная научно-техническая конференция
               </div>
               <div className="flex sm:justify-between">
-              <button type="button" className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full  text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <button type="button" className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full  text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold">
                 ОТПРАВИТЬ СТАТЬЮ
               </button >
               </div>
@@ -222,7 +222,7 @@ const Index = () => {
       </div>
 
       {/* Conference Sections */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div id="sections" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
@@ -283,7 +283,7 @@ const Index = () => {
       </div>
 
       {/* Important Dates */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="dates" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ВАЖНЫЕ ДАТЫ
         </h2>
@@ -314,7 +314,7 @@ const Index = () => {
       </div>
 
       {/* Contacts Section */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="contacts" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           КОНТАКТЫ
         </h2>

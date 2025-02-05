@@ -6,11 +6,21 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
+
   const navItems = [
-    { name: "Секции конференции", path: "/" },
-    { name: "Важные даты", path: "/" },
-    { name: "Контакты", path: "/" },
-    { name: "Отправить статью", path: "/" },
+    { name: "Секции конференции", id: "sections" },
+    { name: "Важные даты", id: "dates" },
+    { name: "Контакты", id: "contacts" },
+    { name: "Отправить статью", id: "submit", isBold: true },
   ];
 
   const isActivePath = (path: string) => {
@@ -31,18 +41,18 @@ const Navbar = () => {
             {/* Desktop menu */}
             <div className="hidden md:flex items-center space-x-5 lg:space-x-10">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.path}
-                  className="text-white hover:text-gray-300 transition-colors duration-200"
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
 
-          {/* Mobile menu button - now vertically centered */}
+          {/* Mobile menu button */}
           <div className="md:hidden absolute right-4 flex items-center h-16">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -59,14 +69,13 @@ const Navbar = () => {
         <div className="md:hidden bg-[#1E1933] border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className="block px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollToSection(item.id)}
+                className={`block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
