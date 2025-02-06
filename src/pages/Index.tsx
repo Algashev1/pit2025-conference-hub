@@ -195,7 +195,7 @@ const Index = () => {
               <div className="pb-4 text-center md:pb-0 md:text-left">
                 Международная научно-техническая конференция
               </div>
-              <div className="flex sm:justify-between gap-4">
+              <div className="flex flex-col items-end gap-3">
                 <button 
                   onClick={handleDownloadTemplate}
                   className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
@@ -206,7 +206,7 @@ const Index = () => {
                 <button 
                   type="button" 
                   onClick={handleSubmitClick}
-                  className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
+                  className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
                 >
                   ОТПРАВИТЬ СТАТЬЮ
                 </button>
