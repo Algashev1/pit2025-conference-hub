@@ -162,6 +162,15 @@ const Index = () => {
     document.body.removeChild(link);
   };
 
+  const handleDownloadTemplate = () => {
+    const link = document.createElement('a');
+    link.href = '/article-template.doc';
+    link.download = 'article-template.doc';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-full bg-[#E6EDF2]">
       {/* Hero Section */}
@@ -174,7 +183,7 @@ const Index = () => {
                   VOLGA CYBER WEEK
                 </h1>
               </div>
-              <div className="md:w-3/5 md:w-3/5">
+              <div className="md:w-3/5">
                 <img
                   src="1.png"
                   alt="Conference"
@@ -186,7 +195,14 @@ const Index = () => {
               <div className="pb-4 text-center md:pb-0 md:text-left">
                 Международная научно-техническая конференция
               </div>
-              <div className="flex sm:justify-between">
+              <div className="flex sm:justify-between gap-4">
+                <button 
+                  onClick={handleDownloadTemplate}
+                  className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
+                >
+                  Правила оформления статьи
+                  <FileText className="w-5 h-5" />
+                </button>
                 <button 
                   type="button" 
                   onClick={handleSubmitClick}
