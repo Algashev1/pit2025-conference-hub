@@ -149,6 +149,10 @@ const Index = () => {
     }));
   };
 
+  const handleSubmitClick = () => {
+    window.open('https://forms.gle/hohswicQsiopmEV17', '_blank');
+  };
+
   return (
     <div className="min-h-full bg-[#E6EDF2]">
       {/* Hero Section */}
@@ -174,9 +178,13 @@ const Index = () => {
                 Международная научно-техническая конференция
               </div>
               <div className="flex sm:justify-between">
-              <button type="button" className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full  text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold">
-                ОТПРАВИТЬ СТАТЬЮ
-              </button >
+                <button 
+                  type="button" 
+                  onClick={handleSubmitClick}
+                  className="m-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
+                >
+                  ОТПРАВИТЬ СТАТЬЮ
+                </button>
               </div>
             </div>   
           </div>

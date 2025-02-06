@@ -8,11 +8,20 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (sectionId === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
+    setIsOpen(false);
+  };
+
+  const handleSubmitClick = () => {
+    window.open('https://forms.gle/hohswicQsiopmEV17', '_blank');
     setIsOpen(false);
   };
 
@@ -20,7 +29,7 @@ const Navbar = () => {
     { name: "Секции конференции", id: "sections" },
     { name: "Важные даты", id: "dates" },
     { name: "Контакты", id: "contacts" },
-    { name: "Отправить статью", id: "submit", isBold: true },
+    { name: "Отправить статью", id: "submit", isBold: true, isExternal: true },
   ];
 
   const isActivePath = (path: string) => {
@@ -33,17 +42,20 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center h-16">
           <div className="flex items-center justify-center space-x-10">
-            <Link to="/" className="flex items-center text-xl font-semibold text-white">
+            <button 
+              onClick={() => scrollToSection('top')} 
+              className="flex items-center text-xl font-semibold text-white hover:text-gray-300 transition-colors duration-200"
+            >
               <Brain className="w-6 h-6 mr-2 text-white" />
               VCW-2025
-            </Link>
+            </button>
             
             {/* Desktop menu */}
             <div className="hidden md:flex items-center space-x-5 lg:space-x-10">
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={item.isExternal ? handleSubmitClick : () => scrollToSection(item.id)}
                   className={`text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
                 >
                   {item.name}
@@ -71,7 +83,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.id)}
+                onClick={item.isExternal ? handleSubmitClick : () => scrollToSection(item.id)}
                 className={`block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
               >
                 {item.name}
