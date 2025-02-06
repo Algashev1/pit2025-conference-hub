@@ -153,6 +153,15 @@ const Index = () => {
     window.open('https://forms.gle/hohswicQsiopmEV17', '_blank');
   };
 
+  const handleDownloadRules = () => {
+    const link = document.createElement('a');
+    link.href = '/conference-rules.pdf';
+    link.download = 'conference-rules.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-full bg-[#E6EDF2]">
       {/* Hero Section */}
@@ -236,12 +245,12 @@ const Index = () => {
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
           <div className="flex items-center gap-2">
-            <Link 
-              to="#" 
+            <button 
+              onClick={handleDownloadRules}
               className="text-accent hover:text-accent/80 transition-colors"
             >
               Скачать положение
-            </Link>
+            </button>
             <FileText className="w-5 h-5 text-accent" />
           </div>
         </div>
