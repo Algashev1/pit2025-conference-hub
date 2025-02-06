@@ -177,6 +177,15 @@ const Index = () => {
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8 pb-5">
+          {/* <div className="flex flex-row-reverse pb-4">
+                <button 
+                  onClick={handleDownloadTemplate}
+                  className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
+                >
+                  Правила оформления статьи
+                  <FileText className="w-5 h-5" />
+                </button>
+            </div> */}
             <div className="md:flex items-center">
               <div className="md:w-2/5 md:pr-8 pb-4 md:pb-0">
                 <h1 className="text-[#1E1933] text-7xl text-center md:text-left" style={{lineHeight: 1.3}}>
@@ -197,13 +206,6 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-end gap-3">
                 <button 
-                  onClick={handleDownloadTemplate}
-                  className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
-                >
-                  Правила оформления статьи
-                  <FileText className="w-5 h-5" />
-                </button>
-                <button 
                   type="button" 
                   onClick={handleSubmitClick}
                   className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
@@ -211,7 +213,7 @@ const Index = () => {
                   ОТПРАВИТЬ СТАТЬЮ
                 </button>
               </div>
-            </div>   
+            </div>
           </div>
         </div>
       </div>
@@ -256,18 +258,25 @@ const Index = () => {
 
       {/* Conference Sections */}
       <div id="sections" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center mb-8">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col items-end gap-2 w-full md:w-auto pb-4 md:pb-0">
             <button 
+                onClick={handleDownloadTemplate}
+                className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
+              >
+                Правила оформления статьи
+                <FileText className="w-5 h-5 text-accent" />
+              </button>
+              <button 
               onClick={handleDownloadRules}
-              className="text-accent hover:text-accent/80 transition-colors"
+              className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
             >
-              Скачать положение
+              Положение о конференции
+              <FileText className="w-5 h-5 text-accent" />
             </button>
-            <FileText className="w-5 h-5 text-accent" />
           </div>
         </div>
 
