@@ -150,7 +150,7 @@ const Index = () => {
   };
 
   const handleSubmitClick = () => {
-    window.open('https://forms.gle/hohswicQsiopmEV17', '_blank');
+    window.open('https://forms.yandex.ru/u/67a5c9cbd0468800bff0e547/', '_blank');
   };
 
   const handleDownloadRules = () => {
