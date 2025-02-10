@@ -304,7 +304,7 @@ const Index = () => {
               </div>
               <div className="h-64 text-[#1E1933]">
                 {expandedCards[section.title] ? (
-                  <div className="p-4 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-sm">
+                  <div className="p-4 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-xs ms:text-sm">
                     {
                       section.items.map((item, i) => (
                         <li key={i}>{item}</li>
