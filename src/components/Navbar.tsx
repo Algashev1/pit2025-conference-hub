@@ -27,9 +27,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Секции конференции", id: "sections" },
-    { name: "Важные даты", id: "dates" },
+    { name: "Даты", id: "dates" },
     { name: "Контакты", id: "contacts" },
-    { name: "Отправить статью", id: "submit", isBold: true, isExternal: true },
+    { name: "Подать доклад", id: "submit", isBold: true, isExternal: true },
   ];
 
   const isActivePath = (path: string) => {

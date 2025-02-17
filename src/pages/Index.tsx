@@ -120,13 +120,13 @@ const Index = () => {
       description: "Объявление списка принятых докладов"
     },
     {
+      date: "24-26 марта, 2025",
+      description: "Проведение конференции"
+    },
+    {
       date: "14 апреля, 2025",
       description: "Объявление списка принятых к публикации тезисов докладов"
     },
-    {
-      date: "24-26 марта, 2025",
-      description: "Проведение конференции"
-    }
   ];
 
   useEffect(() => {
@@ -177,15 +177,6 @@ const Index = () => {
       <div className="relative pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8 pb-5">
-          {/* <div className="flex flex-row-reverse pb-4">
-                <button 
-                  onClick={handleDownloadTemplate}
-                  className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
-                >
-                  Правила оформления статьи
-                  <FileText className="w-5 h-5" />
-                </button>
-            </div> */}
             <div className="md:flex items-center">
               <div className="md:w-2/5 md:pr-8 pb-4 md:pb-0">
                 <h1 className="text-[#1E1933] text-7xl text-center md:text-left" style={{lineHeight: 1.3}}>
@@ -202,15 +193,15 @@ const Index = () => {
             </div>
             <div className="md:flex md:justify-between md:items-center pt-7">
               <div className="pb-4 text-center md:pb-0 md:text-left">
-                Международная научно-техническая конференция
+                Всероссийская научно-техническая конференция
               </div>
               <div className="flex flex-col items-end gap-3">
                 <button 
                   type="button" 
                   onClick={handleSubmitClick}
-                  className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-full text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
+                  className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
                 >
-                  ОТПРАВИТЬ СТАТЬЮ
+                  ПОДАТЬ ДОКЛАД
                 </button>
               </div>
             </div>
@@ -258,23 +249,16 @@ const Index = () => {
 
       {/* Conference Sections */}
       <div id="sections" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
-          <div className="flex flex-col items-end gap-2 w-full md:w-auto pb-4 md:pb-0">
-            <button 
-                onClick={handleDownloadTemplate}
-                className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
-              >
-                Правила оформления статьи
-                <FileText className="w-5 h-5 text-accent" />
-              </button>
+          <div className="flex flex-col items-end gap-2 w-auto pb-0 mt-4 md:mt-0">
               <button 
               onClick={handleDownloadRules}
-              className="text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
+              className="text-right text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
             >
-              Положение о конференции
+              Скачать положение
               <FileText className="w-5 h-5 text-accent" />
             </button>
           </div>
@@ -302,9 +286,9 @@ const Index = () => {
                   }
                 </Button>
               </div>
-              <div className="h-64 text-[#1E1933]">
+              <div className="min-h-64 md:h-64 text-[#1E1933]">
                 {expandedCards[section.title] ? (
-                  <div className="p-4 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-xs ms:text-sm">
+                  <div className="p-4 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-sm">
                     {
                       section.items.map((item, i) => (
                         <li key={i}>{item}</li>
@@ -353,6 +337,42 @@ const Index = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div id="rules" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
+          ПРАВИЛА ОФОРМЛЕНИЯ
+        </h2>
+        <div className="flex w-full flex-col sm:flex-row gap-3">
+          <button 
+            type="button" 
+            onClick={handleDownloadRules}
+            className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+          >
+            <div>
+            Скачать правила
+            </div>
+            <div><FileText className="w-5 h-5 icon-color"  /></div>
+          
+          </button>
+          <button 
+            type="button" 
+            onClick={handleSubmitClick}
+            className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+          >
+            Подать доклад
+          </button>
+        </div>
+      </div>
+
+      <div id="program" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
+          ПРОГРАММА КОНФЕРЕНЦИИ
+        </h2>
+        <div>
+        Информация о программе конференции станет доступна позднее.
+        </div>
+    
       </div>
 
       {/* Contacts Section */}
