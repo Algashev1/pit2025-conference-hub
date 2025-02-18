@@ -248,7 +248,7 @@ const Index = () => {
       </div>
 
       {/* Conference Sections */}
-      <div id="sections" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div id="sections" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 scroll-target">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary">
             СЕКЦИИ КОНФЕРЕНЦИИ
@@ -309,7 +309,7 @@ const Index = () => {
       </div>
 
       {/* Important Dates */}
-      <div id="dates" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="dates" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 scroll-target">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ВАЖНЫЕ ДАТЫ
         </h2>
@@ -322,7 +322,7 @@ const Index = () => {
             {importantDates.map((item, index) => (
               <div key={index} className="relative md:pt-8 pl-12 md:pl-0">
                 {/* Circle point */}
-                <div className="absolute md:top-3 md:left-1/2 top-1.5 left-4 transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
+                <div className="absolute md:top-3 md:left-1/2 top-1.5 custom-point-left  transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
                 
                 {/* Content */}
                 <div className="md:text-center text-left">
@@ -376,7 +376,7 @@ const Index = () => {
       </div>
 
       {/* Contacts Section */}
-      <div id="contacts" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="contacts" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 scroll-target">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           КОНТАКТЫ
         </h2>

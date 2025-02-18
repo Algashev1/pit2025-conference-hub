@@ -13,7 +13,9 @@ const Navbar = () => {
       } else {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({  behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest', });
         }
       }
     }

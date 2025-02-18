@@ -128,3 +128,11 @@ main {
 .icon-color {
   color: #1E1933;
 }
+
+.scroll-target {
+  scroll-margin-top: 80px; /* Укажи высоту твоего фиксированного заголовка */
+}
+
+.custom-point-left {
+  left: 1.08rem;
+}
