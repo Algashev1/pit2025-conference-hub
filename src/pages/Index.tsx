@@ -339,7 +339,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div id="rules" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="rules" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 scroll-target">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ПРАВИЛА ОФОРМЛЕНИЯ
         </h2>
@@ -365,7 +365,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div id="program" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+      <div id="program" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 scroll-target">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ПРОГРАММА КОНФЕРЕНЦИИ
         </h2>

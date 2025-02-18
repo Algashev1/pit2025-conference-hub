@@ -30,6 +30,8 @@ const Navbar = () => {
   const navItems = [
     { name: "Секции конференции", id: "sections" },
     { name: "Даты", id: "dates" },
+    { name: "Правила оформления", id: "rules" },
+    { name: "Программа", id: "program" },
     { name: "Контакты", id: "contacts" },
     { name: "Подать доклад", id: "submit", isBold: true, isExternal: true },
   ];
