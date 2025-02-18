@@ -150,7 +150,7 @@ const Index = () => {
   };
 
   const handleSubmitClick = () => {
-    window.open('https://forms.yandex.ru/u/67a5c9cbd0468800bff0e547/', '_blank');
+    window.open('https://forms.yandex.ru/u/67b47490d0468883369c4eee/', '_blank');
   };
 
   const handleDownloadRules = () => {
@@ -346,7 +346,7 @@ const Index = () => {
         <div className="flex w-full flex-col sm:flex-row gap-3">
           <button 
             type="button" 
-            onClick={handleDownloadRules}
+            onClick={handleDownloadTemplate}
             className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             <div>
