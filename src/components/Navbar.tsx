@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Brain } from "lucide-react";
@@ -33,19 +34,15 @@ const Navbar = () => {
     { name: "Правила оформления", id: "rules" },
     { name: "Программа", id: "program" },
     { name: "Контакты", id: "contacts" },
-    { name: "Подать доклад", id: "submit", isBold: true, isExternal: true },
   ];
 
-  const isActivePath = (path: string) => {
-    if (path === "/" && location.pathname !== "/") return false;
-    return location.pathname.startsWith(path);
-  };
+  const submitButton = { name: "Подать доклад", id: "submit", isBold: true, isExternal: true };
 
   return (
     <nav className="fixed w-full bg-[#1E1933] z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center h-16">
-          <div className="flex items-center justify-center space-x-10">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center space-x-8 lg:space-x-10">
             <button 
               onClick={() => scrollToSection('top')} 
               className="flex items-center text-xl font-semibold text-white hover:text-gray-300 transition-colors duration-200"
@@ -55,12 +52,12 @@ const Navbar = () => {
             </button>
             
             {/* Desktop menu */}
-            <div className="hidden md:flex items-center space-x-5 lg:space-x-10">
+            <div className="hidden xl:flex items-center space-x-5 lg:space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={item.isExternal ? handleSubmitClick : () => scrollToSection(item.id)}
-                  className={`text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-white hover:text-gray-300 transition-colors duration-200 whitespace-nowrap"
                 >
                   {item.name}
                 </button>
@@ -68,8 +65,18 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Submit button - always visible on desktop */}
+          <div className="hidden xl:flex items-center">
+            <button
+              onClick={handleSubmitClick}
+              className="text-white hover:text-gray-300 transition-colors duration-200 font-bold whitespace-nowrap"
+            >
+              {submitButton.name}
+            </button>
+          </div>
+
           {/* Mobile menu button */}
-          <div className="md:hidden absolute right-4 flex items-center h-16">
+          <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-gray-300 focus:outline-none"
@@ -82,17 +89,23 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#1E1933] border-b border-gray-200">
+        <div className="xl:hidden bg-[#1E1933] border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={item.isExternal ? handleSubmitClick : () => scrollToSection(item.id)}
-                className={`block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200 ${item.isBold ? 'font-bold' : ''}`}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200"
               >
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={handleSubmitClick}
+              className="block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200 font-bold"
+            >
+              {submitButton.name}
+            </button>
           </div>
         </div>
       )}
