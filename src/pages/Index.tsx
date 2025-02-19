@@ -112,7 +112,7 @@ const Index = () => {
       description: "Начало приёма материалов доклада"
     },
     {
-      date: "4 марта, 2025",
+      date: "13 марта, 2025",
       description: "Конец приёма материалов доклада"
     },
     {
@@ -195,6 +195,7 @@ const Index = () => {
               <div className="pb-4 text-center md:pb-0 md:text-left">
                 Всероссийская научно-техническая конференция
               </div>
+              <div></div>
               <div className="flex flex-col items-end gap-3">
                 <button 
                   type="button" 
@@ -230,7 +231,7 @@ const Index = () => {
                 &nbsp;
               </div>
               <div>
-                4 марта 2025 г.
+                13 марта 2025 г.
               </div>
             </div>
             <div className="date-block">
@@ -350,7 +351,7 @@ const Index = () => {
             className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             <div>
-            Скачать правила
+            Скачать шаблон
             </div>
             <div><FileText className="w-5 h-5 icon-color"  /></div>
           
@@ -375,6 +376,12 @@ const Index = () => {
 
         <div className="mt-1">
         Организационный взнос отсутствует. Участие в конференции бесплатное.
+        </div>
+
+        <div className="mt-4">
+        По результатам проведения конференции планируется издание электронного сборника
+        материалов конференции с присвоением ISBN. Сборник будет размещен в электронной
+        библиотеке elibrary.ru с индексацией в РИНЦ. 
         </div>
     
       </div>
