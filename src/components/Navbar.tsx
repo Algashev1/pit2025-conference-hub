@@ -70,6 +70,7 @@ const Navbar = () => {
             <button
               onClick={handleSubmitClick}
               className="text-white hover:text-gray-300 transition-colors duration-200 font-bold whitespace-nowrap"
+              disabled
             >
               {submitButton.name}
             </button>

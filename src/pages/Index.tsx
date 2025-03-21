@@ -112,11 +112,11 @@ const Index = () => {
       description: "Начало приёма материалов доклада"
     },
     {
-      date: "13 марта, 2025",
+      date: "17 марта, 2025",
       description: "Конец приёма материалов доклада"
     },
     {
-      date: "17 марта, 2025",
+      date: "19 марта, 2025",
       description: "Объявление списка принятых докладов"
     },
     {
@@ -171,6 +171,24 @@ const Index = () => {
     document.body.removeChild(link);
   };
 
+  const handleDownloadProgram = () => {
+    const link = document.createElement('a');
+    link.href = '/conference-program.pdf';
+    link.download = 'conference-program.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadPapers = () => {
+    const link = document.createElement('a');
+    link.href = '/accepted-papers.pdf';
+    link.download = 'accepted-papers.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-full bg-[#E6EDF2]">
       {/* Hero Section */}
@@ -199,10 +217,10 @@ const Index = () => {
               <div className="flex flex-col items-end gap-3">
                 <button 
                   type="button" 
-                  onClick={handleSubmitClick}
+                  onClick={handleDownloadProgram}
                   className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
                 >
-                  ПОДАТЬ ДОКЛАД
+                  ПРОГРАММА КОНФЕРЕНЦИИ
                 </button>
               </div>
             </div>
@@ -231,7 +249,7 @@ const Index = () => {
                 &nbsp;
               </div>
               <div>
-                13 марта 2025 г.
+                17 марта 2025 г.
               </div>
             </div>
             <div className="date-block">
@@ -359,6 +377,7 @@ const Index = () => {
           <button 
             type="button" 
             onClick={handleSubmitClick}
+            disabled
             className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             Подать доклад
@@ -370,7 +389,27 @@ const Index = () => {
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
           ПРОГРАММА КОНФЕРЕНЦИИ
         </h2>
-        <div>
+        <div className="flex w-full flex-col sm:flex-row gap-3">
+          <button 
+            type="button" 
+            onClick={handleDownloadProgram}
+            className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+          >
+            <div>
+            Программа конференции
+            </div>
+            <div><FileText className="w-5 h-5 icon-color"  /></div>
+          
+          </button>
+          <button 
+            type="button" 
+            onClick={handleDownloadPapers}
+            className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+          >
+            Принятые доклады
+          </button>
+        </div>
+        <div className="mt-4">
         Информация о программе конференции станет доступна позднее. 
         </div>
 
