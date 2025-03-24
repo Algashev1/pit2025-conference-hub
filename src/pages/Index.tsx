@@ -238,7 +238,7 @@ const Index = () => {
                 г. Самара
               </div>
               <div>
-                ул. Молодогвардейская, 151
+              Студенческий переулок, 8
               </div>
             </div>
             <div className="date-block">
@@ -450,7 +450,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="text-sm text-gray-600">Адрес</div>
-                <div className="text-primary">ул. Молодогвардейская, 151</div>
+                <div className="text-primary">Студенческий переулок, 8</div>
               </div>
             </div>
           </div>
