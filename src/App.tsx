@@ -10,6 +10,7 @@ import Committees from "./pages/Committees";
 import Sections from "./pages/Sections";
 import Dates from "./pages/Dates";
 import Submit from "./pages/Submit";
+import ArchiveVCV2025 from "./pages/ArchiveVCV2025"
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/sections" element={<Sections />} />
               <Route path="/dates" element={<Dates />} />
               <Route path="/submit" element={<Submit />} />
+              <Route path="/archive" element = {<ArchiveVCV2025/>}/>
             </Routes>
           </main>
           <Footer />

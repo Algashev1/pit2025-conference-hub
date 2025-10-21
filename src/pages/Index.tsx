@@ -305,9 +305,9 @@ const Index = () => {
                   }
                 </Button>
               </div>
-              <div className="min-h-64 md:h-64 text-[#1E1933]">
+              <div className="min-h-64 md:h-64 text-green">
                 {expandedCards[section.title] ? (
-                  <div className="p-4 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-sm">
+                  <div className="p-8 pb-8 sm:pb-4 pt-0 h-full flex flex-col text-sm">
                     {
                       section.items.map((item, i) => (
                         <li key={i}>{item}</li>
@@ -326,7 +326,15 @@ const Index = () => {
           ))}
         </div>
       </div>
+          {/* <div id="test" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="bg-white rounded-lg w-64 h-20 shadow-sm hover:shadow-lg">
+                
+              </div>
+              
 
+            </div>
+          </div> */}
       {/* Important Dates */}
       <div id="dates" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 scroll-target">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
