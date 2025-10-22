@@ -371,10 +371,11 @@ const Index = () => {
           ПРАВИЛА ОФОРМЛЕНИЯ
         </h2>
         <div className="flex w-full flex-col sm:flex-row gap-3">
+          {/* Добавить md:w-1/2 когда кнопка нужна будет */}
           <button 
             type="button" 
             onClick={handleDownloadTemplate}
-            className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+            className="flex items-center justify-center gap-4 w-full bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             <div>
             Скачать шаблон
@@ -382,14 +383,14 @@ const Index = () => {
             <div><FileText className="w-5 h-5 icon-color"  /></div>
           
           </button>
-          <button 
+          {/* <button 
             type="button" 
             onClick={handleSubmitClick}
             disabled
-            className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
+            className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2"
           >
             Подать доклад
-          </button>
+          </button> */}
         </div>
       </div>
 
