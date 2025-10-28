@@ -10,7 +10,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-   const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string) => {
     if (location.pathname === '/') {
       if (sectionId === 'top') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,7 +54,6 @@ const Navbar = () => {
               VCW-2025
             </button>
 
-            {/* Desktop menu */}
             <div className="hidden xl:flex items-center space-x-5 lg:space-x-8">
               {navItems.map((item) => (
                 <button
@@ -66,28 +65,31 @@ const Navbar = () => {
                 </button>
               ))}
             </div>
-            <div className="relative  hidden xl:inline-block">
+            <div className="relative hidden xl:inline-block group">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={` ${isMenuOpen ? 'text-gray-300' : 'text-white'} transition-colors duration-200 whitespace-nowrap hidden xl:flex items-center flex-col`}>
+                className="text-white group-hover:text-gray-300 transition-colors duration-200 whitespace-nowrap hidden xl:flex items-center flex-col"
+              >
                 Архив
               </button>
-              {isMenuOpen && <ul
-                className="absolute w-36 mt-5 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 transition-transform duration-300 ease-in-out transform origin-top scale-100"
+              <div className="absolute w-full h-5 left-0 top-full" />
+
+              <ul
+                className="absolute w-36 mt-5 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform origin-top"
               >
-                {archiveItems.map((item, index) =>
+                {archiveItems.map((item, index) => (
                   <li
                     key={index}
                     className="cursor-pointer border-t border-gray-400 py-2"
                   >
-                    <Link to={item.link}
-                    className="block w-full text-white text-center hover:text-gray-300"
+                    <Link
+                      to={item.link}
+                      className="block w-full text-white text-center hover:text-gray-300"
                     >
                       {item.name}
                     </Link>
                   </li>
-                )}
-              </ul>}
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -102,7 +104,6 @@ const Navbar = () => {
             </button>
           </div> */}
 
-          {/* Mobile menu button */}
           <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -114,7 +115,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="xl:hidden bg-[#1E1933] border-b border-gray-200">
           <div className="pt-2 pb-3 space-y-1">
@@ -127,28 +127,35 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
-            <div className="relative xl:hidden ">
+            <div className="relative xl:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={` ${isMenuOpen ? 'text-gray-300' : 'text-white'} transition-colors duration-200 w-full block text-left px-3 py-2`}>
+                className={`${isMenuOpen ? 'text-gray-300' : 'text-white'} transition-colors duration-200 w-full block text-left px-3 py-2`}
+              >
                 Архив
               </button>
-              {isMenuOpen && <ul
-                className="absolute w-full mt-1 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 transition-transform duration-300 ease-in-out transform origin-top scale-100"
+
+              <ul
+                className={`absolute w-full mt-1 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 transition-all duration-300 ease-in-out transform origin-top ${isMenuOpen
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-50 invisible -translate-y-2'
+                  }`}
               >
-                {archiveItems.map((item, index) =>
+                {archiveItems.map((item, index) => (
                   <li
                     key={index}
-                    className="cursor-pointer "
+                    className="cursor-pointer"
                   >
-                    <Link to={item.link}
-                    className="block w-full text-white text-left pl-6 py-2 hover:text-gray-300 text-sm"
+                    <Link
+                      to={item.link}
+                      className="block w-full text-white text-left pl-6 py-2 hover:text-gray-300 text-sm"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
                   </li>
-                )}
-              </ul>}
+                ))}
+              </ul>
             </div>
             {/* <button
               onClick={handleSubmitClick}

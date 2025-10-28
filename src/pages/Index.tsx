@@ -197,7 +197,7 @@ const Index = () => {
           <div className="bg-white rounded-lg shadow-lg p-8 pb-5">
             <div className="md:flex items-center">
               <div className="md:w-2/5 md:pr-8 pb-4 md:pb-0">
-                <h1 className="text-[#1E1933] text-7xl text-center md:text-left" style={{lineHeight: 1.3}}>
+                <h1 className="text-[#1E1933] text-7xl text-center md:text-left" style={{ lineHeight: 1.3 }}>
                   VOLGA CYBER WEEK
                 </h1>
               </div>
@@ -215,8 +215,8 @@ const Index = () => {
               </div>
               <div></div>
               <div className="flex flex-col items-end gap-3">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={handleDownloadProgram}
                   className="w-full md:w-auto text-white bg-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
                 >
@@ -229,41 +229,41 @@ const Index = () => {
       </div>
 
       <div className="pt-10 pb-5 dates-line">
-          <div className="md:flex justify-between max-w-4xl mx-auto  px-4 md:px-4">
-            <div className="date-block">
-              <div className="date-title">
-                Место проведения
-              </div>
-              <div>
-                г. Самара
-              </div>
-              <div>
+        <div className="md:flex justify-between max-w-4xl mx-auto  px-4 md:px-4">
+          <div className="date-block">
+            <div className="date-title">
+              Место проведения
+            </div>
+            <div>
+              г. Самара
+            </div>
+            <div>
               Студенческий переулок, 8
-              </div>
-            </div>
-            <div className="date-block">
-              <div className="date-title">
-                Конец приёма материалов
-              </div>
-              <div className="hidden md:flex">
-                &nbsp;
-              </div>
-              <div>
-                17 марта 2025 г.
-              </div>
-            </div>
-            <div className="date-block">
-              <div className="date-title">
-                Даты проведения
-              </div>
-              <div className="hidden md:flex">
-                &nbsp;
-              </div>
-              <div>
-                24-26 марта 2025 г.
-              </div>
             </div>
           </div>
+          <div className="date-block">
+            <div className="date-title">
+              Конец приёма материалов
+            </div>
+            <div className="hidden md:flex">
+              &nbsp;
+            </div>
+            <div>
+              17 марта 2025 г.
+            </div>
+          </div>
+          <div className="date-block">
+            <div className="date-title">
+              Даты проведения
+            </div>
+            <div className="hidden md:flex">
+              &nbsp;
+            </div>
+            <div>
+              24-26 марта 2025 г.
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Conference Sections */}
@@ -273,7 +273,7 @@ const Index = () => {
             СЕКЦИИ КОНФЕРЕНЦИИ
           </h2>
           <div className="flex flex-col items-end gap-2 w-auto pb-0 mt-4 md:mt-0">
-              <button 
+            <button
               onClick={handleDownloadRules}
               className="text-right text-accent hover:text-accent/80 transition-colors font-medium flex items-center gap-2"
             >
@@ -285,12 +285,12 @@ const Index = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {sections.map((section, index) => (
-            <div 
+            <div
               key={section.title}
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-fade-up relative flex flex-col justify-between"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="grow flex justify-between items-center p-4" style={{maxHeight: 88}}>
+              <div className="grow flex justify-between items-center p-4" style={{ maxHeight: 88 }}>
                 <h3 className="w-4/5 text-[#00A7E1] font-medium text-xl">
                   {section.title}
                 </h3>
@@ -301,7 +301,7 @@ const Index = () => {
                   onClick={() => toggleCard(section.title)}
                 >
                   {
-                    expandedCards[section.title] ? ( <Minus className="h-8 w-8" />) : (   <Plus className="h-8 w-8" />)
+                    expandedCards[section.title] ? (<Minus className="h-8 w-8" />) : (<Plus className="h-8 w-8" />)
                   }
                 </Button>
               </div>
@@ -311,11 +311,11 @@ const Index = () => {
                     {
                       section.items.map((item, i) => (
                         <li key={i}>{item}</li>
-                      ))   
+                      ))
                     }
                   </div>
                 ) : (
-                  <div 
+                  <div
                     className="h-full w-full bg-cover bg-center cursor-pointer"
                     style={{ backgroundImage: `url("${section.image}")` }}
                     onClick={() => toggleCard(section.title)}
@@ -326,7 +326,7 @@ const Index = () => {
           ))}
         </div>
       </div>
-          {/* <div id="test" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      {/* <div id="test" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="bg-white rounded-lg w-64 h-20 shadow-sm hover:shadow-lg">
                 
@@ -343,14 +343,14 @@ const Index = () => {
         <div className="relative mb-16">
           {/* Timeline line - horizontal on desktop, vertical on mobile */}
           <div className="absolute md:left-0 md:right-0 md:h-0.5 md:top-4 md:w-full h-full w-0.5 left-4 top-0 bg-gradient-to-r md:from-[#17C54E] md:via-[#00A7E1] md:to-[#004876] bg-gradient-to-b from-[#17C54E] via-[#00A7E1] to-[#004876]" />
-          
+
           {/* Timeline points */}
           <div className="relative grid grid-cols-1 md:grid-cols-5 gap-4 pt-2 md:pt-0">
             {importantDates.map((item, index) => (
               <div key={index} className="relative md:pt-8 pl-12 md:pl-0">
                 {/* Circle point */}
                 <div className="absolute md:top-3 md:left-1/2 top-1.5 custom-point-left  transform md:-translate-x-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white bg-[#004876]" />
-                
+
                 {/* Content */}
                 <div className="md:text-center text-left">
                   <p className="text-[#00A7E1] text-base font-medium mb-2">
@@ -372,16 +372,16 @@ const Index = () => {
         </h2>
         <div className="flex w-full flex-col sm:flex-row gap-3">
           {/* Добавить md:w-1/2 когда кнопка нужна будет */}
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={handleDownloadTemplate}
             className="flex items-center justify-center gap-4 w-full bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             <div>
-            Скачать шаблон
+              Скачать шаблон
             </div>
-            <div><FileText className="w-5 h-5 icon-color"  /></div>
-          
+            <div><FileText className="w-5 h-5 icon-color" /></div>
+
           </button>
           {/* <button 
             type="button" 
@@ -399,19 +399,19 @@ const Index = () => {
           ПРОГРАММА КОНФЕРЕНЦИИ
         </h2>
         <div className="flex w-full flex-col sm:flex-row gap-3">
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={handleDownloadProgram}
             className="flex items-center justify-center gap-4 w-full md:w-1/2 bg-[#ffffff] text-[#1E1933] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
             <div>
-            Программа конференции
+              Программа конференции
             </div>
-            <div><FileText className="w-5 h-5 icon-color"  /></div>
-          
+            <div><FileText className="w-5 h-5 icon-color" /></div>
+
           </button>
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={handleDownloadPapers}
             className="w-full md:w-1/2 text-white bg-[#00A7E1] focus:outline-none font-medium rounded-lg text-xl px-5 py-3.5 text-center md:me-2 mb-2 font-bold"
           >
@@ -423,15 +423,15 @@ const Index = () => {
         </div> */}
 
         <div className="mt-4">
-        Организационный взнос отсутствует. Участие в конференции бесплатное.
+          Организационный взнос отсутствует. Участие в конференции бесплатное.
         </div>
 
         <div className="mt-4">
-        По результатам проведения конференции планируется издание электронного сборника
-        материалов конференции с присвоением ISBN. Сборник будет размещен в электронной
-        библиотеке elibrary.ru с индексацией в РИНЦ. 
+          По результатам проведения конференции планируется издание электронного сборника
+          материалов конференции с присвоением ISBN. Сборник будет размещен в электронной
+          библиотеке elibrary.ru с индексацией в РИНЦ.
         </div>
-    
+
       </div>
 
       {/* Contacts Section */}
@@ -464,11 +464,11 @@ const Index = () => {
             </div>
           </div>
 
-    
+
         </div>
-          <div className="w-full mt-8 h-[300px] bg-white rounded-lg overflow-hidden">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A223ceca6596dff3653bb9c878f5fc65d32aff316f9684f188e19fe128ff4bd72&amp;source=constructor" width="100%" height="100%"></iframe>
-          </div>
+        <div className="w-full mt-8 h-[300px] bg-white rounded-lg overflow-hidden">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A223ceca6596dff3653bb9c878f5fc65d32aff316f9684f188e19fe128ff4bd72&amp;source=constructor" width="100%" height="100%"></iframe>
+        </div>
       </div>
 
       {showScrollTop && (
@@ -483,8 +483,8 @@ const Index = () => {
         </Button>
       )}
 
-      <NewsletterSubscription 
-        open={showSubscriptionModal} 
+      <NewsletterSubscription
+        open={showSubscriptionModal}
         onOpenChange={setShowSubscriptionModal}
       />
     </div>
