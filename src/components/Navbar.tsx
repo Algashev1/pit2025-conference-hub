@@ -12,6 +12,8 @@ const navItems = [
 
 const archiveItems = [{ name: "VCW-2025", link: "/archive" }];
 
+const SUBMIT_URL = "https://scideck.ru/vcw2026";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
@@ -108,15 +110,13 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
           <button
-            disabled
-            className="hidden xl:flex px-5 py-2 rounded-lg text-sm font-bold text-white/40 cursor-not-allowed"
+            onClick={() => window.open(SUBMIT_URL, "_blank", "noopener,noreferrer")}
+            className="hidden xl:flex px-5 py-2 rounded-lg text-[15px] font-bold text-white hover:opacity-80 transition-opacity"
             style={{
-              background: "rgba(0,167,225,0.15)",
-              border: "1px solid rgba(0,167,225,0.2)",
+              background: "rgba(0,167,225,0.2)",
+              border: "1px solid rgba(0,167,225,0.35)",
             }}
-            title="Ссылка на подачу докладов будет доступна позднее"
           >
             Подать доклад
           </button>
@@ -184,9 +184,12 @@ const Navbar = () => {
 
           <div className="pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
             <button
-              disabled
-              className="w-full mt-2 px-5 py-3 rounded-lg text-[15px] font-bold text-white/40 cursor-not-allowed"
-              style={{ background: "rgba(0,167,225,0.1)", border: "1px solid rgba(0,167,225,0.15)" }}
+              onClick={() => {
+                window.open(SUBMIT_URL, "_blank", "noopener,noreferrer");
+                setIsOpen(false);
+              }}
+              className="w-full mt-2 px-5 py-3 rounded-lg text-[15px] font-bold text-white hover:opacity-80 transition-opacity"
+              style={{ background: "rgba(0,167,225,0.2)", border: "1px solid rgba(0,167,225,0.35)" }}
             >
               Подать доклад
             </button>
