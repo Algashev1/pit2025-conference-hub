@@ -111,10 +111,10 @@ const ArchiveVCV2025 = () => {
     <div className="min-h-screen pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 text-center">
-          VOLGA CYBER WEEK 2025
+          VOLGA CYBER WEEK 2025 (архив)
         </h1>
         <p className="text-gray-700 text-lg sm:text-xl text-center">
-          Всероссийская молодежная научно-практическая конференция по информатике и кибернетике
+          Всероссийская молодежная научно-практическая конференция по информатике и кибернетике (архив)
         </p>
       </div>
 

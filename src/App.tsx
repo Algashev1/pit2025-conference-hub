@@ -6,10 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
-import Committees from "./pages/Committees";
-import Sections from "./pages/Sections";
-import Dates from "./pages/Dates";
-import Submit from "./pages/Submit";
 import ArchiveVCV2025 from "./pages/ArchiveVCV2025"
 
 const queryClient = new QueryClient();
@@ -25,10 +21,6 @@ const App = () => (
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/committees" element={<Committees />} />
-              <Route path="/sections" element={<Sections />} />
-              <Route path="/dates" element={<Dates />} />
-              <Route path="/submit" element={<Submit />} />
               <Route path="/archive" element = {<ArchiveVCV2025/>}/>
             </Routes>
           </main>

@@ -1,171 +1,198 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Brain } from "lucide-react";
-import { Value } from "@radix-ui/react-select";
+
+const navItems = [
+  { name: "Секции", id: "sections" },
+  { name: "Даты", id: "dates" },
+  { name: "Правила", id: "rules" },
+  { name: "Программа", id: "program" },
+  { name: "Контакты", id: "contacts" },
+];
+
+const archiveItems = [{ name: "VCW-2025", link: "/archive" }];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isArchiveOpen, setIsArchiveOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
-    if (location.pathname === '/') {
-      if (sectionId === 'top') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false);
+    if (location.pathname === "/") {
+      if (sectionId === "top") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } else {
       navigate(`/?scrollTo=${sectionId}`);
     }
   };
 
-  const handleSubmitClick = () => {
-    window.open('https://forms.yandex.ru/u/67a5c9cbd0468800bff0e547/', '_blank');
-    setIsOpen(false);
-  };
-
-  const navItems = [
-    { name: "Секции конференции", id: "sections" },
-    { name: "Даты", id: "dates" },
-    { name: "Правила оформления", id: "rules" },
-    { name: "Программа", id: "program" },
-    { name: "Контакты", id: "contacts" },
-  ];
-  const archiveItems = [
-    { name: "VCW-2025", link: "/archive" }
-  ];
-
-  const submitButton = { name: "Подать доклад", id: "submit", isBold: true, isExternal: true };
-
   return (
-    <nav className="fixed w-full bg-[#1E1933] z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-8 lg:space-x-10">
-            <button
-              onClick={() => scrollToSection('top')}
-              className="flex items-center text-xl font-semibold text-white hover:text-gray-300 transition-colors duration-200"
+    <nav
+      className="fixed w-full z-50 transition-all duration-300"
+      style={{
+        background: "#1E1933",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent",
+        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.25)" : "none",
+      }}
+    >
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+
+          <button
+            onClick={() => scrollToSection("top")}
+            className="flex items-center gap-0.5 select-none"
+          >
+            <Brain className="w-8 h-8 text-white" />
+            <span
+              className="ml-2.5 text-xs font-bold px-2 py-0.5 rounded"
+              style={{ background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.45)" }}
             >
-              <Brain className="w-6 h-6 mr-2 text-white" />
-              VCW-2025
-            </button>
+              2026
+            </span>
+          </button>
 
-            <div className="hidden xl:flex items-center space-x-5 lg:space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-gray-300 transition-colors duration-200 whitespace-nowrap"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-            <div className="relative hidden xl:inline-block group">
+          <div className="hidden xl:flex items-center gap-1">
+            {navItems.map((item) => (
               <button
-                className="text-white group-hover:text-gray-300 transition-colors duration-200 whitespace-nowrap hidden xl:flex items-center flex-col"
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="relative px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors duration-150 group"
               >
-                Архив
+                {item.name}
+                <span
+                  className="absolute bottom-0.5 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                  style={{ background: "#00A7E1" }}
+                />
               </button>
-              <div className="absolute w-full h-5 left-0 top-full" />
+            ))}
 
-              <ul
-                className="absolute w-36 mt-5 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform origin-top"
+            <div className="relative group px-1">
+              <button className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors duration-150 flex items-center gap-1.5">
+                Архив
+                <svg
+                  className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-transform duration-200 group-hover:rotate-180"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-0 right-0 h-3 top-full" />
+              <div
+                className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 min-w-[150px] rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0"
+                style={{
+                  background: "#2a2545",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06)",
+                }}
               >
-                {archiveItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className="cursor-pointer border-t border-gray-400 py-2"
+                {archiveItems.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.link}
+                    className="block px-5 py-3.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors text-center"
                   >
-                    <Link
-                      to={item.link}
-                      className="block w-full text-white text-center hover:text-gray-300"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
+                    {item.name}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
 
-          {/* Submit button - always visible on desktop
-          <div className="hidden xl:flex items-center">
-            <button
-              onClick={handleSubmitClick}
-              className="text-white hover:text-gray-300 transition-colors duration-200 font-bold whitespace-nowrap"
-              disabled
-            >
-              {submitButton.name}
-            </button>
-          </div> */}
+          <button
+            disabled
+            className="hidden xl:flex px-5 py-2 rounded-lg text-sm font-bold text-white/40 cursor-not-allowed"
+            style={{
+              background: "rgba(0,167,225,0.15)",
+              border: "1px solid rgba(0,167,225,0.2)",
+            }}
+            title="Ссылка на подачу докладов будет доступна позднее"
+          >
+            Подать доклад
+          </button>
 
-          <div className="xl:hidden flex items-center">
+          {/* Mobile burger */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="xl:hidden w-10 h-10 flex items-center justify-center rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div
+        className="xl:hidden overflow-hidden transition-all duration-300"
+        style={{ maxHeight: isOpen ? "520px" : "0" }}
+      >
+        <div
+          className="px-4 pb-5 pt-2 space-y-1"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          {navItems.map((item) => (
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-gray-300 focus:outline-none"
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="flex w-full items-center px-4 py-3 rounded-lg text-[15px] text-white/70 hover:text-white transition-colors text-left"
+              style={{ background: "transparent" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.06)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {item.name}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setIsArchiveOpen(!isArchiveOpen)}
+            className="flex w-full items-center justify-between px-4 py-3 rounded-lg text-[15px] text-white/70 hover:text-white transition-colors"
+          >
+            Архив
+            <svg
+              className="w-4 h-4 transition-transform duration-200"
+              style={{ transform: isArchiveOpen ? "rotate(180deg)" : "rotate(0)" }}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {isArchiveOpen && (
+            <div className="ml-3 pl-3" style={{ borderLeft: "2px solid rgba(0,167,225,0.3)" }}>
+              {archiveItems.map((item, i) => (
+                <Link
+                  key={i}
+                  to={item.link}
+                  className="block px-4 py-2.5 text-[15px] text-white/60 hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <div className="pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+            <button
+              disabled
+              className="w-full mt-2 px-5 py-3 rounded-lg text-[15px] font-bold text-white/40 cursor-not-allowed"
+              style={{ background: "rgba(0,167,225,0.1)", border: "1px solid rgba(0,167,225,0.15)" }}
+            >
+              Подать доклад
             </button>
           </div>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="xl:hidden bg-[#1E1933] border-b border-gray-200">
-          <div className="pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200"
-              >
-                {item.name}
-              </button>
-            ))}
-            <div className="relative xl:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${isMenuOpen ? 'text-gray-300' : 'text-white'} transition-colors duration-200 w-full block text-left px-3 py-2`}
-              >
-                Архив
-              </button>
-
-              <ul
-                className={`absolute w-full mt-1 bg-[#1E1933] shadow-md left-1/2 -translate-x-1/2 z-0 transition-all duration-300 ease-in-out transform origin-top ${isMenuOpen
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-50 invisible -translate-y-2'
-                  }`}
-              >
-                {archiveItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className="cursor-pointer"
-                  >
-                    <Link
-                      to={item.link}
-                      className="block w-full text-white text-left pl-6 py-2 hover:text-gray-300 text-sm"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* <button
-              onClick={handleSubmitClick}
-              className="block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-200 font-bold"
-            >
-              {submitButton.name}
-            </button> */}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
