@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <div className="min-h-screen flex flex-col">
+      <div style={{ minHeight: "-webkit-fill-available" }} className=" flex flex-col">
         <Toaster />
         <Sonner />
         <BrowserRouter>

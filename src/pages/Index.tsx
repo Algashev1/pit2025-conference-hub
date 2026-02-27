@@ -32,8 +32,8 @@ const Index = () => {
 
   const handleDownloadTemplate = () => {
     const a = document.createElement("a");
-    a.href = "/template_2026.doc";
-    a.download = "template_2026.doc";
+    a.href = "/template_2026.docx";
+    a.download = "template_2026.docx";
     a.click();
   };
 
@@ -138,7 +138,7 @@ const Index = () => {
           style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.07)" }}
         >
           <p>Формат конференции — <strong>очный</strong>.</p>
-          <p>Участие с докладом и публикация в сборнике материалов конференции - <strong>бесплатные</strong>.</p>
+          <p>Участие с докладом и публикация в сборнике материалов конференции — <strong>бесплатные</strong>.</p>
           <p>Программа конференции будет сформирована позднее.</p>
           <p>
             По результатам конференции планируется издание электронного сборника с

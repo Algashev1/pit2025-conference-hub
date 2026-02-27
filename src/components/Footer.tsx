@@ -2,8 +2,10 @@ import { Mail, MapPin } from "lucide-react";
 
 const Footer = () => (
   <footer
-    className="mt-auto"
-    style={{ background: "#1E1933" }}
+    style={{ 
+    background: "#1E1933",
+    paddingBottom: "env(safe-area-inset-bottom)"
+  }}
   >
     <div
       className="h-px w-full"
@@ -75,7 +77,7 @@ const Footer = () => (
           </div>
         </div>
 
-        <div className="text-right text-sm text-white/30 leading-relaxed">
+        <div className="md:text-right text-sm text-white/30 leading-relaxed">
           <p className="font-medium text-white/50">© 2026 VCW-2026</p>
           <p>Самарский университет</p>
         </div>
