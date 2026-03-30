@@ -75,8 +75,8 @@ const Hero = () => (
                     <div className="text-xs opacity-80 mt-0.5">Студенческий переулок, 8</div>
                 </div>
                 <div className="sm:border-r sm:border-white/25 px-4">
-                    <div className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-1">Приём материалов до</div>
-                    <div className="font-bold text-base">30 марта 2026 г.</div>
+                    <div className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-1">Приём материалов продлен до</div>
+                    <div className="font-bold text-base">5 апреля 2026 г.</div>
                 </div>
                 <div className="px-4">
                     <div className="text-[11px] font-semibold uppercase tracking-widest opacity-70 mb-1">Даты конференции</div>

@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import ArchiveVCV2025 from "./pages/ArchiveVCV2025"
 
+
+
 const queryClient = new QueryClient();
 
 const App = () => (
