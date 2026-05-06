@@ -110,7 +110,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <button
+          {/* <button
             onClick={() => window.open(SUBMIT_URL, "_blank", "noopener,noreferrer")}
             className="hidden xl:flex px-5 py-2 rounded-lg text-[15px] font-bold text-white hover:opacity-80 transition-opacity"
             style={{
@@ -119,7 +119,7 @@ const Navbar = () => {
             }}
           >
             Подать доклад
-          </button>
+          </button> */}
 
           {/* Mobile burger */}
           <button
@@ -182,7 +182,7 @@ const Navbar = () => {
             </div>
           )}
 
-          <div className="pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+          {/* <div className="pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
             <button
               onClick={() => {
                 window.open(SUBMIT_URL, "_blank", "noopener,noreferrer");
@@ -193,7 +193,7 @@ const Navbar = () => {
             >
               Подать доклад
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

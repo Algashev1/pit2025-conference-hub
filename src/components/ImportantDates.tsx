@@ -18,7 +18,7 @@ const ImportantDates = () => (
         style={{ background: "linear-gradient(to right, #17C54E, #00A7E1, #004876)" }}
       />
 
-      <div className="relative grid grid-cols-1 md:grid-cols-5 gap-4 pt-2 md:pt-0">
+      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4 pt-2 md:pt-0">
         {importantDates.map((item, index) => (
           <div key={index} className="group relative md:pt-10 pl-12 md:pl-0">
             <div
