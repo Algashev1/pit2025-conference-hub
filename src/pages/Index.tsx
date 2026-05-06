@@ -137,7 +137,9 @@ const Index = () => {
           className="bg-white rounded-lg p-7 space-y-4 text-[#1E1933] text-base leading-relaxed"
           style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.07)" }}
         >
-          <p>Формат конференции — <strong>очный</strong>.</p>
+          <p className="text-base sm:text-lg">
+            Формат конференции — <strong>очный</strong>.
+          </p>
           <p>Участие с докладом и публикация в сборнике материалов конференции — <strong>бесплатные</strong>.</p>
           <p>Программа конференции будет сформирована позднее.</p>
           <p>
@@ -145,6 +147,16 @@ const Index = () => {
             присвоением ISBN. Сборник будет размещён в{" "}
             <strong>elibrary.ru</strong> с индексацией в РИНЦ.
           </p>
+          <div className="pt-3">
+            <a
+              href="/program-2026.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00A7E1] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0076a3]"
+            >
+              Сетка программы конференции
+            </a>
+          </div>
         </div>
       </div>
 
