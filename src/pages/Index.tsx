@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import ImportantDates from "@/components/ImportantDates";
 import Contacts from "@/components/Contacts";
 import SectionsGrid from "@/components/SectionsGrid";
+import Partners from "@/components/Partners";
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -161,40 +162,12 @@ const Index = () => {
       </div>
 
       {/* Партнёр конференции */}
-      <div id="partner" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-16">
-        <h2 className="text-3xl md:text-4xl font-black text-[#1E1933] tracking-tight mb-8">
-          ПАРТНЁР КОНФЕРЕНЦИИ
-        </h2>
-        <div
-          className="bg-white rounded-lg p-7 space-y-6 text-[#1E1933] text-base leading-relaxed"
-          style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.07)" }}
-        >
-          <div className="flex flex-col sm:flex-row items-center gap-5">
-            <img
-              src="/t1-logo.svg"
-              alt="Логотип Т1"
-              className="h-16 w-auto object-contain"
-            />
-            <p className="font-semibold text-lg">
-              Компания <span className="text-[#00A7E1]">Т1</span> выступает официальным партнёром Volga Cyber Week 2026.
-            </p>
-          </div>
-          <p>Т1 — один из лидеров российского ИТ-рынка, специализирующийся на облачных решениях, кибербезопасности и инфраструктуре. Компания поддерживает развитие научных и образовательных проектов, а также внедряет современные цифровые технологии в бизнес и образование.</p>
-          <p>Партнёрство с Т1 помогает конференции обеспечить студентов и молодых исследователей актуальной экспертизой в области информационной безопасности и цифровой трансформации.</p>
-          <a
-            href="https://t1.ru"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00A7E1] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0076a3]"
-          >
-            Посетить сайт Т1
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </div>
+      <Partners />
 
+      {/* Контакты */}
       <Contacts />
 
+        
       {showScrollTop && (
         <button
           onClick={scrollToTop}
