@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import ArchiveVCV2025 from "./pages/ArchiveVCV2025"
+import ArchiveVCV2026 from "./pages/ArchiveVCV2026"
+import Contest from "./pages/Contest"
 
 
 
@@ -24,6 +26,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/archive" element={<ArchiveVCV2025 />} />
+              <Route path="/archive-2026" element={<ArchiveVCV2026 />} />
+              <Route path="/contest" element={<Contest />} />
             </Routes>
           </main>
           <Footer />

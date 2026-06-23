@@ -90,7 +90,7 @@ export const sections: Section[] = [
     ],
   },
   {
-    title: "Наука о данных",
+    title: "Науки о данных",
     image: "66.png",
     accent: "#004876",
     items: [

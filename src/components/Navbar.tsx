@@ -10,13 +10,21 @@ const navItems = [
   { name: "Контакты", id: "contacts" },
 ];
 
-const archiveItems = [{ name: "VCW-2025", link: "/archive" }];
+const archiveItems = [
+  { name: "VCW-2026", link: "/archive-2026" },
+  { name: "VCW-2025", link: "/archive" },
+];
+
+const contestItems = [
+  { name: "Конкурс 2026", link: "/contest" },
+];
 
 const SUBMIT_URL = "https://scideck.ru/vcw2026";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
+  const [isContestOpen, setIsContestOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -79,6 +87,36 @@ const Navbar = () => {
                 />
               </button>
             ))}
+
+            <div className="relative group px-1">
+              <button className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors duration-150 flex items-center gap-1.5">
+                Конкурс
+                <svg
+                  className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-transform duration-200 group-hover:rotate-180"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-0 right-0 h-3 top-full" />
+              <div
+                className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 min-w-[150px] rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0"
+                style={{
+                  background: "#2a2545",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06)",
+                }}
+              >
+                {contestItems.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.link}
+                    className="block px-5 py-3.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors text-center"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <div className="relative group px-1">
               <button className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors duration-150 flex items-center gap-1.5">
@@ -152,6 +190,35 @@ const Navbar = () => {
               {item.name}
             </button>
           ))}
+
+          <button
+            onClick={() => setIsContestOpen(!isContestOpen)}
+            className="flex w-full items-center justify-between px-4 py-3 rounded-lg text-[15px] text-white/70 hover:text-white transition-colors"
+          >
+            Конкурс
+            <svg
+              className="w-4 h-4 transition-transform duration-200"
+              style={{ transform: isContestOpen ? "rotate(180deg)" : "rotate(0)" }}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {isContestOpen && (
+            <div className="ml-3 pl-3" style={{ borderLeft: "2px solid rgba(0,167,225,0.3)" }}>
+              {contestItems.map((item, i) => (
+                <Link
+                  key={i}
+                  to={item.link}
+                  className="block px-4 py-2.5 text-[15px] text-white/60 hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          )}
 
           <button
             onClick={() => setIsArchiveOpen(!isArchiveOpen)}
