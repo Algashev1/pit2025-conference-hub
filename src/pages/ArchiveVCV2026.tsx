@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { FileText } from "lucide-react";
 import Carousel from "@/components/Carousel";
 
 const ArchiveVCV2026 = () => {
@@ -59,6 +60,28 @@ const ArchiveVCV2026 = () => {
           <p>
             Конференция была проведена при поддержке индустриальных партнеров — компании Т1 и ООО «ИТ-Сервис».
           </p>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-primary mb-8">
+          ПУБЛИКАЦИИ И МАТЕРИАЛЫ
+        </h2>
+
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <h3 className="text-lg font-semibold text-primary mb-3">Сборник трудов</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Опубликованный сборник научных трудов конференции Volga Cyber Week 2026 в репозитории Самарского университета
+          </p>
+          <a
+            href="https://repo.ssau.ru/jspui/handle/VOLGA-CYBER-WEEK/525"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full rounded-md border border-[#00A7E1] px-4 py-2 text-sm font-medium text-[#00A7E1] hover:bg-[#00A7E1] hover:text-white transition-colors"
+          >
+            <FileText className="w-4 h-4 mr-2" />
+            Перейти к сборнику
+          </a>
         </div>
       </section>
 
